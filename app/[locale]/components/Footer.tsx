@@ -59,7 +59,7 @@ export default function Footer() {
           alt=""
         />
       </div>
-      <div className="text-white flex lg:flex-row flex-col justify-between items-center md:px-16 xl:px-52 lg:py-10 relative z-10">
+      <div className="text-white flex lg:flex-row flex-col justify-between items-center py-6 md:px-16 xl:px-52 lg:py-10 relative z-10">
         <div className="flex text-left z-10">
           <h1 className={`${maruipol_bold.className} text-white lg:max-w-xs text-3xl`}>
             МГО “Рада студентів технічних університетів” ЄДРПОУ
