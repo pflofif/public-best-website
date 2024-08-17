@@ -76,12 +76,12 @@ export default function Footer() {
           <Image
             src="/Line_vertical.svg"
             width={30}
-            height={30}
+            height={40}
             className="w-auto flex lg:hidden py-8"
             alt="Line Vertical"
           />
         </div>
-        <div className="lg:flex hidden text-left flex-row text-white text-sm gap-8 z-10 lg:px-24 ">
+        <div className="lg:flex hidden text-left flex-row text-white text-sm gap-8 z-10 lg:px-24">
           <div className="flex flex-col gap-3">
             {renderFooterLinks().slice(0, 4)}
           </div>
@@ -89,8 +89,8 @@ export default function Footer() {
             {renderFooterLinks().slice(4)}
           </div>
         </div>
-        <div className="flex flex-col h-full justify-between z-10 gap-6">
-          <div className="flex flex-row justify-between w-full">
+        <div className="flex flex-col h-full justify-between z-10 gap-6 w-full lg:w-auto">
+          <div className="flex flex-row justify-between">
             {renderSocialLinks()}
           </div>
           <div>
