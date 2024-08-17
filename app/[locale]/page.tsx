@@ -2,11 +2,11 @@
 import { useTranslations } from "next-intl";
 
 export default function Home() {
-  const t = useTranslations();
-  let y = 7;
+  const t = useTranslations("Home");
+  
   return (
     <main>
-      <p>{t('Home.Hi')}</p>
+      <p>{t('Hi')}</p>
     </main>
   )
 }
