@@ -1,10 +1,11 @@
 "use client"
 import { useTranslations } from "next-intl";
-import FailedMessage from "./components/FailedMessage";
+
 import OurPartners from "./components/OurPartners";
 import Footer from "./components/Footer";
 import Image from "next/image";
 import Header from "./components/Header";
+import ValuesPage from "./components/ColorSquersValuesFull";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -13,6 +14,7 @@ export default function Home() {
     <main>
       <Header />
       <div className="relative">
+        <ValuesPage />
         <OurPartners />
         <Image
           src="/Partners_bg.svg"
