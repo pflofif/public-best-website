@@ -17,9 +17,8 @@ export default function Home() {
   const events = useTranslations("Events");
   return (
     <main>
-      <Header />
       <div className="relative">
-        <Timeline/>
+        <Timeline />
         <ValuesPage />
         <OurPartners />
         <Image
@@ -30,7 +29,6 @@ export default function Home() {
           alt=""
         />
       </div>
-      <Footer />
     </main>
   );
 }
