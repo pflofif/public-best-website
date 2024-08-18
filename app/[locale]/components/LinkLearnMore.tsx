@@ -16,7 +16,7 @@ const LinkLearnMore = ({ text: text, href: href, btnColor: btnColor, textColor: 
       <span className='inline-flex justify-center items-center'>
         <span className={`${textColor} font-bold`}>{text}</span>
         <Image alt="arrow"
-          src='./arrow.svg'
+          src='../arrow.svg'
           className='ml-2 group-hover:-translate-y-1 transition-transform duration-300'
           width={24} height={24}></Image>
       </span>
