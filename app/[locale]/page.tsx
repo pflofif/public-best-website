@@ -1,5 +1,7 @@
 "use client"
 import { useTranslations } from "next-intl";
+
+import Timeline from './components/Timeline'
 import Event from "./components/EventSection/Event";
 import FailedMessage from "./components/FailedMessage";
 import OurPartners from "./components/OurPartners";
@@ -17,6 +19,7 @@ export default function Home() {
     <main>
       <Header />
       <div className="relative">
+        <Timeline/>
         <ValuesPage />
         <OurPartners />
         <Image
@@ -28,8 +31,6 @@ export default function Home() {
         />
       </div>
       <Footer />
-
-     
     </main>
   );
 }
