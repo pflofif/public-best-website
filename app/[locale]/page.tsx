@@ -10,6 +10,7 @@ import Image from "next/image";
 import Header from "./components/Header";
 import ValuesPage from "./components/ColorSquersValuesFull";
 import DepartmentsPage from "./components/ColorSquersDepartmentsPage";
+import WeDevelopStudents from "./components/WeDevelopStudents";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <main>
       <Header />
+      <WeDevelopStudents/>
       <div className="relative">
         <Timeline/>
         <ValuesPage />
