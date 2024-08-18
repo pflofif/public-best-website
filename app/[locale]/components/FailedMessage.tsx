@@ -1,5 +1,6 @@
 import Image from "next/image"
 import LinkLearnMore from "./LinkLearnMore"
+import { inter } from "../fonts/fonts";
 interface Props {
     headerText: string,
     text: string
@@ -11,11 +12,11 @@ export default function FailedMessage({ headerText, text }: Props) {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
             <div className="relative p-6 border-2 border-gray-300 border-opacity-50 rounded-lg w-[70vw] max-w-4xl text-center shadow-sm bg-white">
-                <p className="font-bold text-lg md:text-4xl mb-6">{headerText}</p>
-                <p dangerouslySetInnerHTML={{ __html: formattedText }} className="mb-10" />
+                <p className="font-bold text-2xl  md:text-4xl mb-6">{headerText}</p>
+                <p dangerouslySetInnerHTML={{ __html: formattedText }} className={` ${inter.className} mb-10 px-40`} />
 
                 <Image
-                    src="/strips.svg"
+                    src="/strips.svg"   
                     alt="lines"
                     height={48}
                     width={56}

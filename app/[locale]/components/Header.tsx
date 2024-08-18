@@ -32,7 +32,7 @@ export default function Header() {
         <header className={`${inter.className} bg-best-blue text-white fixed top-0 w-full z-50 text-[20px]`}>
             <div className="container mx-auto flex justify-between items-center  h-[110px]">
                 {/* Logo */}
-                <div className="flex items-center">
+                <div className="pl-8 flex items-center">
                     <img src="/best-logo.svg" alt="Best Lviv" width={123} height={64}
                         className="max-h-12 lg:min-h-48" />
                 </div>
@@ -85,7 +85,7 @@ export default function Header() {
                 </nav>
 
                 {/* Stand with Ukraine button */}
-                <div className="hidden md:block pr-4">
+                <div className="hidden md:block pr-8">
                     <div className="bg-white text-best-blue px-4 py-2 rounded-full font-bold flex items-center">
                         Stand with Ukraine
                         <img
