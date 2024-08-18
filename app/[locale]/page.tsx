@@ -1,15 +1,18 @@
 "use client"
 import { useTranslations } from "next-intl";
-
+import Event from "./components/EventSection/Event";
+import FailedMessage from "./components/FailedMessage";
 import OurPartners from "./components/OurPartners";
 import Footer from "./components/Footer";
 import Image from "next/image";
 import Header from "./components/Header";
 import ValuesPage from "./components/ColorSquersValuesFull";
+import DepartmentsPage from "./components/ColorSquersDepartmentsPage";
+
 
 export default function Home() {
   const t = useTranslations("Home");
-
+  const events = useTranslations("Events");
   return (
     <main>
       <Header />
@@ -25,6 +28,8 @@ export default function Home() {
         />
       </div>
       <Footer />
+
+     
     </main>
-  )
+  );
 }

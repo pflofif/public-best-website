@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    '.app/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    ".app/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -13,9 +13,13 @@ module.exports = {
         "best-green": "#77DD77",
         "best-yellow": "#FFF16C",
         "best-red": "#FF617E",
-        "best-purple": "#EC9EFF"
-      }
-    }
+        "best-purple": "#EC9EFF",
+      },
+      screens: {
+        "min-lg": { min: "1312px" },
+        "max-lg": { max: "1312px" },
+      },
+    },
   },
   plugins: [],
-}
+};
