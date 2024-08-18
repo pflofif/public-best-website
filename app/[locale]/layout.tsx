@@ -2,6 +2,7 @@ import '../globals.css'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation';
+import Footer from './components/Footer';
 
 export const metadata: Metadata = {
   title: 'BEST Lviv'
@@ -26,7 +27,9 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
     <html lang={params.locale} suppressHydrationWarning={true}>
       <NextIntlClientProvider locale={params.locale} messages={messages}>
         <body suppressHydrationWarning={true}>
+         
           {children}
+          <Footer />
         </body>
       </NextIntlClientProvider>
     </html >

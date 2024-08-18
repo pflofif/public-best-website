@@ -13,6 +13,7 @@ import LinkLearnMore from "../../LinkLearnMore"
 import EventLine from "./EventLine"
 
 const EventDescription = ({ descColor: descColor, headingText: headingText, descriptionText: descriptionText }: EventDescriptionProps) => {
+    
     return (
         <div className={`basis-[560px] flex max-lg:items-center flex-col order-1`}>
             <div className={"mb-6 max-lg:hidden"}>
