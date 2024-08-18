@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from 'next/image'
+import { inter } from "../fonts/fonts";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +29,8 @@ export default function Header() {
     ];
 
     return (
-        <header className="bg-best-blue text-white">
-            <div className="container mx-auto flex justify-between items-center p-4 h-[140px]">
+        <header className={`${inter.className} bg-best-blue text-white fixed top-0 w-full z-50 text-[20px]`}>
+            <div className="container mx-auto flex justify-between items-center  h-[110px]">
                 {/* Logo */}
                 <div className="flex items-center">
                     <img src="/best-logo.svg" alt="Best Lviv" width={123} height={64}
@@ -84,7 +85,7 @@ export default function Header() {
                 </nav>
 
                 {/* Stand with Ukraine button */}
-                <div className="hidden md:block pr-8">
+                <div className="hidden md:block pr-4">
                     <div className="bg-white text-best-blue px-4 py-2 rounded-full font-bold flex items-center">
                         Stand with Ukraine
                         <img
@@ -112,7 +113,7 @@ export default function Header() {
                 className={`fixed top-0 right-0 h-full w-64 bg-best-blue text-white transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
                     } transition-transform duration-300 ease-in-out md:hidden`}
             >
-                 {/* Close Button */}
+                {/* Close Button */}
                 <div className="h-[140px] flex bg-best-blue justify-self-end justify-end pr-12">
                     <Image src="./headerBurger.svg" alt="dhjfdh" width={42} height={42} className="rotate-90" onClick={toggleMenu} />
                 </div>
