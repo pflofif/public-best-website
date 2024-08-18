@@ -8,8 +8,8 @@ import OurPartners from "./components/OurPartners";
 import Footer from "./components/Footer";
 import Image from "next/image";
 import Header from "./components/Header";
-import ValuesPage from "./components/ColorSquersValuesFull";
-import DepartmentsPage from "./components/ColorSquersDepartmentsPage";
+import ValuesPage from "./components/DepartmentsAndIdentity/ColorSquersValuesFull";
+import DepartmentsPage from "./components/DepartmentsAndIdentity/ColorSquersDepartmentsPage";
 
 
 export default function Home() {
