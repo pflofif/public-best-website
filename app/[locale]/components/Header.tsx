@@ -89,7 +89,7 @@ export default function Header() {
                     <div className="bg-white text-best-blue px-4 py-2 rounded-full font-bold flex items-center">
                         Stand with Ukraine
                         <img
-                            src="./ukrainianFlag.svg"
+                            src="/ukrainianFlag.svg"
                             alt="UK"
                             width={32}
                             height={32}
@@ -102,7 +102,7 @@ export default function Header() {
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         {!isOpen && (
-                            <Image src="./headerBurger.svg" alt="dhjfdh" width={42} height={42} />
+                            <Image src="/headerBurger.svg" alt="dhjfdh" width={42} height={42} />
                         )}
                     </button>
                 </div>
