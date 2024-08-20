@@ -31,9 +31,9 @@ export default function ValuesPage() {
         className="w-6 lg:w-8 absolute lg:top-48 right-4 lg:left-24 -z-10 rotate-45"
         alt=""
       />
-      <ValuesBoxes>
+      <ValuesBoxes />
 
-      </ValuesBoxes>
+      
 
     </div>
   )

@@ -8,10 +8,8 @@ import OurPartners from "./components/OurPartners";
 import Footer from "./components/Footer";
 import Image from "next/image";
 import Header from "./components/Header";
-import ValuesPage from "./components/ColorSquersValuesFull";
-import DepartmentsPage from "./components/ColorSquersDepartmentsPage";
 import WeDevelopStudents from "./components/WeDevelopStudents";
-
+import ValuesPage from "./components/DepartmentsAndIdentity/ColorSquersValuesFull";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -21,7 +19,7 @@ export default function Home() {
       <Header />
       <WeDevelopStudents/>
       <div className="relative">
-        <Timeline/>
+        <Timeline />
         <ValuesPage />
         <OurPartners />
         <Image
@@ -32,7 +30,6 @@ export default function Home() {
           alt=""
         />
       </div>
-      <Footer />
     </main>
   );
 }
