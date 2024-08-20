@@ -112,7 +112,7 @@ export default function EventsPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-100 py-36 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
                 <h1 className="text-2xl font-semibold text-gray-800 mb-6">{isEditing ? 'Edit Event' : 'Add Event'}</h1>
                 <form onSubmit={handleSubmit} className="mb-8 space-y-4">

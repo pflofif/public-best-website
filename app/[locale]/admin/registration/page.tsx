@@ -58,7 +58,7 @@ export default function RegistrationPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-100 py-36 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
                 <h1 className="text-2xl font-semibold text-gray-800 mb-6">Manage Registration</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
