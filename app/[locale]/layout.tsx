@@ -28,9 +28,9 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
     <html lang={params.locale} suppressHydrationWarning={true}>
       <NextIntlClientProvider locale={params.locale} messages={messages}>
         <body suppressHydrationWarning={true}>
-          {/* <Header /> */}
+          <Header />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </body>
       </NextIntlClientProvider>
     </html >
