@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { maruipol_bold, inter } from "../fonts/fonts";
+import { maruipol_bold, inter } from "../../fonts/fonts";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';

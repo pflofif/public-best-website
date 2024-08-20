@@ -1,6 +1,6 @@
 import Image from "next/image"
 import LinkLearnMore from "./LinkLearnMore"
-import { inter } from "../fonts/fonts";
+import { inter } from "../../fonts/fonts";
 interface Props {
     headerText: string,
     text: string

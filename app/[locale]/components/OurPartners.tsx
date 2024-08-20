@@ -1,4 +1,4 @@
-import { maruipol_bold, inter } from "../fonts/fonts";
+import { maruipol_bold, inter } from "../../fonts/fonts";
 import Image from "next/image";
 
 const partnersData = [

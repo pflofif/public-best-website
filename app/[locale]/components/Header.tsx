@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from 'next/image'
-import { inter } from "../fonts/fonts";
+import { inter } from "../../fonts/fonts";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);

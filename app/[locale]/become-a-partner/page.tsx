@@ -1,11 +1,11 @@
-import { maruipol_bold, inter } from "../fonts/fonts";
+"use client"
+import { maruipol_bold, inter } from "../../fonts/fonts";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { generateMessage } from "../hooks/generateEmail";
-import styles from './styles/FormInput.module.css';
+import { generateMessage } from "../../hooks/generateEmail";
 
 const validationSchema = Yup.object({
   company_message: Yup.string().required("Required"),

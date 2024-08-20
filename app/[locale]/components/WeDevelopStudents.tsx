@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { maruipol_bold, inter } from "../fonts/fonts";
+import { maruipol_bold, inter } from "../../fonts/fonts";
 
 export default function WeDevelopStudents() {
     return (
