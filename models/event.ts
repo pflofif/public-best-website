@@ -5,6 +5,7 @@ const eventSchema = new Schema({
     description: { type: String, required: true },
     data: { type: String, required: true },
     isInProgress: { type: Boolean, required: true },
+    sectionColor: { type: String, required: true }
 });
 
 const Event = models.Event || model('Event', eventSchema);
