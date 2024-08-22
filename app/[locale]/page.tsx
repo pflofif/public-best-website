@@ -10,6 +10,7 @@ import Image from "next/image";
 import Header from "./components/Header";
 import WeDevelopStudents from "./components/WeDevelopStudents";
 import ValuesPage from "./components/DepartmentsAndIdentity/ColorSquersValuesFull";
+import EventSliderSection from "./EventSliderSection/EventSliderSection";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -29,6 +30,7 @@ export default function Home() {
           className="w-full h-full -z-20 opacity-90"
           alt=""
         />
+        <EventSliderSection />
       </div>
     </main>
   );
