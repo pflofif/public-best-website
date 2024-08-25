@@ -1,5 +1,5 @@
 "use client"
-import { useTranslations } from "next-intl";
+import {useTranslations} from "next-intl";
 
 import Timeline from './components/Timeline'
 import Event from "./components/EventSection/Event";
@@ -11,27 +11,29 @@ import Header from "./components/Header";
 import WeDevelopStudents from "./components/WeDevelopStudents";
 import ValuesPage from "./components/DepartmentsAndIdentity/ColorSquersValuesFull";
 import EventSliderSection from "./EventSliderSection/EventSliderSection";
+import HowOrganizationWork from "./components/HowOrganizationWork";
 
 export default function Home() {
-  const t = useTranslations("Home");
-  const events = useTranslations("Events");
-  return (
-    <main>
-      <Header />
-      <WeDevelopStudents/>
-      <div className="relative">
-        <Timeline />
-        <ValuesPage />
-        <OurPartners />
-        <Image
-          src="/Partners_bg.svg"
-          layout="fill"
-          objectFit="cover"
-          className="w-full h-full -z-20 opacity-90"
-          alt=""
-        />
-        <EventSliderSection />
-      </div>
-    </main>
-  );
+    const t = useTranslations("Home");
+    const events = useTranslations("Events");
+    return (
+        <main>
+            <Header/>
+            <WeDevelopStudents/>
+            <div className="relative">
+                <Timeline/>
+                <ValuesPage/>
+                <HowOrganizationWork/>
+                <OurPartners/>
+                <Image
+                    src="/Partners_bg.svg"
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full -z-20 opacity-90"
+                    alt=""
+                />
+                <EventSliderSection/>
+            </div>
+        </main>
+    );
 }
