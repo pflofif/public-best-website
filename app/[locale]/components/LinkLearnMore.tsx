@@ -8,6 +8,7 @@ interface ButtonLearnMoreProps {
 }
 
 import Image from 'next/image'
+import Link from 'next/link';
 
 
 const LinkLearnMore = ({ text, href, btnColor, textColor }: ButtonLearnMoreProps) => {
@@ -24,17 +25,17 @@ const LinkLearnMore = ({ text, href, btnColor, textColor }: ButtonLearnMoreProps
   const textColorClass = colorClasses[textColor];
 
   return (
-    <a href={href}
+    <Link href={href}
       style={{ backgroundColor: btnColorClass }}
       className={`py-4 px-10 rounded-full min-lg:self-start group`}>
       <span className='inline-flex justify-center items-center'>
         <span className={`font-bold`} style={{ color: textColorClass }}>{text}</span>
         <Image alt="arrow"
-          src='../arrow.svg'
+          src='/arrow.svg'
           className='ml-2 group-hover:-translate-y-1 transition-transform duration-300'
           width={24} height={24}></Image>
       </span>
-    </a>
+    </Link>
 
   )
 }

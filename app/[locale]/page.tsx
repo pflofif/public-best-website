@@ -10,7 +10,7 @@ import Image from "next/image";
 import Header from "./components/Header";
 import WeDevelopStudents from "./components/WeDevelopStudents";
 import ValuesPage from "./components/DepartmentsAndIdentity/ColorSquersValuesFull";
-import EventSliderSection from "./EventSliderSection/EventSliderSection";
+import EventSliderSection from "./components/EventSliderSection/EventSliderSection";
 import HowOrganizationWork from "./components/HowOrganizationWork";
 
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
             <Header/>
             <WeDevelopStudents/>
             <div className="relative">
+                
                 <Timeline/>
                 <ValuesPage/>
                 <EventSliderSection/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import LinkLearnMore from '../components/LinkLearnMore';
+import LinkLearnMore from '../LinkLearnMore';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -52,7 +52,7 @@ export default function EventSliderSection() {
 
                     <LinkLearnMore
                         btnColor='best-yellow'
-                        href='#'
+                        href='/about-us'
                         text='Дізнатись більше'
                         textColor='best-blue'
                     />
@@ -60,7 +60,6 @@ export default function EventSliderSection() {
                 </div>
                 <div className='lg:width-[844px] relative'>
                     <Swiper
-
                         slidesPerView={window.innerWidth <= 1024 ? window.innerWidth <= 640 ? 1 : 2 : 1.5}
                         navigation
                         spaceBetween={window.innerWidth <= 1024 ? 50 : 20}

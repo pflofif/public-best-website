@@ -4,7 +4,7 @@ import DepartmentsPage from "../components/DepartmentsAndIdentity/ColorSquersDep
 export default function Page() {
     return (
         <div>
-            <Boardies />
+            {/* <Boardies /> */}
             <DepartmentsPage />
         </div>
     )

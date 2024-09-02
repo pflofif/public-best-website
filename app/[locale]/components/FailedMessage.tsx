@@ -1,6 +1,7 @@
 import Image from "next/image"
 import LinkLearnMore from "./LinkLearnMore"
 import { inter } from "../../fonts/fonts";
+import Link from "next/link";
 interface Props {
     headerText: string,
     text: string
@@ -16,7 +17,7 @@ export default function FailedMessage({ headerText, text }: Props) {
                 <p dangerouslySetInnerHTML={{ __html: formattedText }} className={` ${inter.className} mb-10 px-40`} />
 
                 <Image
-                    src="/strips.svg"   
+                    src="/strips.svg"
                     alt="lines"
                     height={48}
                     width={56}
@@ -30,8 +31,8 @@ export default function FailedMessage({ headerText, text }: Props) {
                     className="absolute bottom-[-40px] right-[-40px] sm:bottom-[-50px] sm:right-[-50px] rotate-180 w-12 h-12 sm:w-14 sm:h-14"
                 />
                 <div className="flex gap-3 flex-wrap justify-center">
-                    <LinkLearnMore btnColor={"best-yellow"} href="#" text="Про нас" textColor="best-blue"></LinkLearnMore>
-                    <a href="#" className="py-4 px-10 rounded-full text-best-blue border-2 border-best-blue font-bold">Наші івенти</a>
+                    <LinkLearnMore btnColor={"best-yellow"} href="/about-us" text="Про нас" textColor="best-blue"></LinkLearnMore>
+                    <Link href="/events" className="py-4 px-10 rounded-full text-best-blue border-2 border-best-blue font-bold">Наші івенти</Link>
                 </div>
             </div>
         </div>

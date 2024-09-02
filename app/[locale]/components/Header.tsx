@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from 'next/image'
 import { inter } from "../../fonts/fonts";
+import Link from "next/link";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -62,24 +63,24 @@ export default function Header() {
                                 {/* Dropdown Menu */}
                                 <div className="absolute left-0 mt-2 py-2 w-40 bg-blue-800 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 ease-in-out">
                                     {item.dropdownItems.map((dropdownItem, i) => (
-                                        <a
+                                        <Link
                                             key={i}
                                             href={dropdownItem.href}
                                             className="block px-4 py-2 text-sm hover:bg-blue-700"
                                         >
                                             {dropdownItem.label}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
                         ) : (
-                            <a
+                            <Link
                                 key={index}
                                 href={item.href}
                                 className="hover:text-gray-300"
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         )
                     )}
                 </nav>
@@ -122,9 +123,9 @@ export default function Header() {
                 <nav className="">
                     {menuItems.map((item, index) => (
                         <div key={index}>
-                            <a href={item.href} className="pl-8 shadow-ms shadow-inner block py-2 text-lg hover:bg-blue-700">
+                            <Link href={item.href} className="pl-8 shadow-ms shadow-inner block py-2 text-lg hover:bg-blue-700">
                                 {item.label}
-                            </a>
+                            </Link>
                         </div>
                     ))}
                 </nav>

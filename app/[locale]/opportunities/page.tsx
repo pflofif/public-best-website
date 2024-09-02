@@ -47,7 +47,7 @@ export default function Page() {
 
     if (events.length !== 0) {
         return (
-            <div className="relative min-h-screen">
+            <div className="relative min-h-screen lg:pt-0 pt-40">
                 <Image
                     src="/Partners_bg.svg"
                     layout="fill"
@@ -56,7 +56,7 @@ export default function Page() {
                     alt=""
                 />
 
-                <div className="lg:py-48 flex items-center w-full justify-center flex-col p-6">
+                <div className="py-20 lg:pt-48 lg:pb-28 flex items-center w-full justify-center flex-col p-6">
                     <h1 className={`${maruipol_bold.className} text-3xl lg:text-5xl lg:font-bold font-bold lg:mb-6 mb-8 text-center relative`}>
                         <span className="text-black">Актуальні Можливості</span> <span className="text-blue-500">Для Тебе</span>
                         <Image
