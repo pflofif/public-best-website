@@ -23,6 +23,7 @@ export default function Home() {
             <div className="relative">
                 <Timeline/>
                 <ValuesPage/>
+                <EventSliderSection/>
                 <HowOrganizationWork/>
                 <OurPartners/>
                 <Image
@@ -32,7 +33,6 @@ export default function Home() {
                     className="w-full h-full -z-20 opacity-90"
                     alt=""
                 />
-                <EventSliderSection/>
             </div>
         </main>
     );

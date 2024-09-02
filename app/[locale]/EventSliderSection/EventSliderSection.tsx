@@ -70,50 +70,38 @@ export default function EventSliderSection() {
                         modules={[Pagination, Navigation]}
                         className='mt-20 lg:mt-0 lg:absolute top-0 left-0 h-[640px] min-w-0 lg:max-w-[800px]   '>
 
-                        <SwiperSlide
-
-
-                        >
-
+                        <SwiperSlide>
                             <SwiperElement
                                 title='BEST::HACKath0n'
                                 description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
-                                imageUrl='/eventSliderSection/1.jpg'
+                                imageUrl='/eventImages/bec.png'
                             />
                         </SwiperSlide>
-                        <SwiperSlide
 
-
-                        >
-
+                        <SwiperSlide>
                             <SwiperElement
                                 title='BEST::HACKath0n'
                                 description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
-                                imageUrl='/eventSliderSection/1.jpg'
+                                imageUrl='/eventImages/hack.jpg'
                             />
                         </SwiperSlide>
-                        <SwiperSlide
 
-
-                        >
-
+                        <SwiperSlide>
                             <SwiperElement
                                 title='BEST::HACKath0n'
                                 description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
-                                imageUrl='/eventSliderSection/1.jpg'
+                                imageUrl='/eventImages/bec.png'
                             />
                         </SwiperSlide>
-                        <SwiperSlide
 
-
-                        >
-
+                        <SwiperSlide>
                             <SwiperElement
                                 title='BEST::HACKath0n'
                                 description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
-                                imageUrl='/eventSliderSection/1.jpg'
+                                imageUrl='/eventImages/ejf.png'
                             />
                         </SwiperSlide>
+
                     </Swiper>
 
                 </div>

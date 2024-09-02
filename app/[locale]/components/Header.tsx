@@ -12,20 +12,20 @@ export default function Header() {
     };
 
     const menuItems = [
-        { label: 'Про нас', href: '#' },
+        { label: 'Про нас', href: '/about-us' },
         {
             label: 'Блог',
-            href: '#',
+            href: '/blog',
             isDropdown: true,
             dropdownItems: [
                 { label: 'Blog 1', href: '#' },
                 { label: 'Blog 2', href: '#' },
             ],
         },
-        { label: 'Івенти', href: '#' },
-        { label: 'Твої можливості', href: '#' },
-        { label: 'Галерея', href: '#' },
-        { label: 'Q/A', href: '#' },
+        { label: 'Івенти', href: '/events' },
+        { label: 'Твої можливості', href: '/opportunities' },
+        { label: 'Галерея', href: '/gallera' },
+        { label: 'Q/A', href: '/qa' },
     ];
 
     return (
