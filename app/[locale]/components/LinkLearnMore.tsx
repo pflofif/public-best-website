@@ -1,4 +1,4 @@
-type Colors = "best-blue" | "best-pink" | "best-orange" | "best-green" | "best-yellow" | "best-red" | "best-purple";
+export type Colors = "best-blue" | "best-pink" | "best-orange" | "best-green" | "best-yellow" | "best-red" | "best-purple";
 
 interface ButtonLearnMoreProps {
   text: string,
