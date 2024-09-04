@@ -12,6 +12,8 @@ import WeDevelopStudents from "./components/WeDevelopStudents";
 import ValuesPage from "./components/DepartmentsAndIdentity/ColorSquersValuesFull";
 import EventSliderSection from "./components/EventSliderSection/EventSliderSection";
 import HowOrganizationWork from "./components/HowOrganizationWork";
+import BoardTitle from "./components/BoardTitle";
+import RectangleBoard from "./components/ServicesAndBoard/RectangleBoard";
 
 export default function Home() {
     const t = useTranslations("Home");
@@ -20,6 +22,7 @@ export default function Home() {
         <main>
             <Header/>
             <WeDevelopStudents/>
+            <RectangleBoard></RectangleBoard>
             <div className="relative">
                 <Event description="loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem " heading="kja;sd" sectionColor="best-blue" imageName="bec" ></Event>
                 <Event description="loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem loreem " heading="kja;sd" sectionColor="best-blue" imageName="bec" isInverted></Event>
