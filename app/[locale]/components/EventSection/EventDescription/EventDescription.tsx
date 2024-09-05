@@ -1,6 +1,6 @@
 
 interface EventDescriptionProps {
-    descColor: string,
+    descColor: Colors,
 
     headingText: string,
     descriptionText: string,
@@ -9,7 +9,7 @@ interface EventDescriptionProps {
 }
 
 
-import LinkLearnMore from "../../LinkLearnMore"
+import LinkLearnMore, { Colors } from "../../LinkLearnMore"
 import EventLine from "./EventLine"
 
 const EventDescription = ({ descColor: descColor, headingText: headingText, descriptionText: descriptionText }: EventDescriptionProps) => {
@@ -19,8 +19,8 @@ const EventDescription = ({ descColor: descColor, headingText: headingText, desc
             <div className={"mb-6 max-lg:hidden"}>
                 <EventLine lineColor={descColor}></EventLine>
             </div>
-            <h4 className="text-3xl font-bold sm:mb-5 mb-2 sm:text-5xl max-lg:text-center">{headingText}</h4>
-            <p className="text-lg min-lg:mb-16 mb-8 max-w-[459px] max-lg:text-center">{descriptionText}</p>
+            <h4 className="text-xl font-bold sm:mb-5 mb-2 sm:text-5xl max-lg:text-center">{headingText}</h4>
+            <p className="text-base min-lg:mb-16 mb-8 max-w-[459px] max-lg:text-center">{descriptionText}</p>
 
             <LinkLearnMore text={"Дізнатися більше"} href="#" btnColor={descColor} textColor="text-black"></LinkLearnMore>
         </div>
