@@ -3,7 +3,7 @@ import RectangleWithEmoji from "./RectangleBoardService";
 
 export default function RectangleBoard() {
   return (
-   <section>
+   <section className="pt-48">
       <BoardTitle></BoardTitle>
       <div className="flex items-center justify-center ">
         
