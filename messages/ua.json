@@ -1,0 +1,31 @@
+{
+    "Home": {
+        "Hi": "Привіт"
+    },
+    "Events": {
+        "CTF": {
+            "title": "Capture The Flag",
+            "description": "Lorem ipsum dolor sit amet consectetur. Felis feugiat quisque placerat cursus vestibulum eu ipsum duis. Sit massa rhoncus volutpat enim ac. Tortor amet commodo at id in commodo. Sit ac adipiscing at blandit id dictum sed posuere ultricies."
+        },
+        "Hackathon": {
+            "title": "Hackathon",
+            "description": "HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної проблеми або створенням нового програмного продукту, сервісу чи додатку."
+        },
+        "EJF": {
+            "title": "Інженерний Ярмарок Кар’єри",
+            "description": "ІЯК (Інженерний Ярмарок Кар’єри) — це виставка провідних компаній для амбітних студентів та молодих спеціалістів, які бажають зробити перший крок до своєї кар’єри."
+        },
+        "BEC":{
+            "title": "BEST Engineering Competion",
+            "description": "Наймасштабніші командні інженерні змагання Львову. Команди, які беруть участь в BEC змагаються у двох категоріях."
+        },
+        "BCI": {
+            "title": "BEST Company Insight",
+            "description": "Захід для групи студентів, що відбувається в офісі компанії, протягом якого учасники знайомляться з її внутрішніми процесами, слухають шерінги, спілкуються, залучаються в різні активності, отримують  досвід і  цікаво проводять час."
+        },
+        "BTW": {
+            "title": "BEST Traning Week",
+            "description": "BTW (BEST Training Week) — це тиждень (зазвичай 5 робочих днів) безкоштовних насичених тренінгів, шерінгів, лекцій, воркшопів і т.п. для студентів різноманітних спеціальностей"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "Home" : {
+        "Hi" : "HIHIH"
+    },
+    "Events": {
+        "CTF": {
+            "title": "Capture The Flag",
+            "description": "Lorem ipsum dolor sit amet consectetur. Felis feugiat quisque placerat cursus vestibulum eu ipsum duis. Sit massa rhoncus volutpat enim ac. Tortor amet commodo at id in commodo. Sit ac adipiscing at blandit id dictum sed posuere ultricies."
+        },
+        "Hackathon": {
+            "title": "Hackathon",
+            "description": "HACKath0n (from hack and marathon) is an intensive event where participants work together to solve a specific problem or create a new software product, service, or application."
+        },
+        "EJF": {
+            "title": "Engineering Career Fair",
+            "description": "EJF (Engineering Job Fair) is an exhibition of leading companies for ambitious students and young professionals who want to take their first step in their career."
+        },
+        "BEC": {
+            "title": "BEST Engineering Competition",
+            "description": "The largest team engineering competition in Lviv. The teams participating in BEC compete in two categories."
+        },
+        "BCI": {
+            "title": "BEST Company Insight",
+            "description": "An event for a group of students that takes place at the company's office, during which participants get acquainted with its internal processes, listen to sharings, communicate, engage in various activities, gain experience, and have a great time."
+        },
+        "BTW": {
+            "title": "BEST Training Week",
+            "description": "BTW (BEST Training Week) is a week (usually 5 working days) of free intensive trainings, sharings, lectures, workshops, etc. for students of various specialties."
+        }
+    }
+}
