@@ -98,7 +98,7 @@ const BecomeAPartner = () => {
   });
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center max-w-7xl w-full px-6 mx-auto gap-8">
+    <section className="min-h-screen flex flex-col items-center justify-center max-w-7xl w-full px-6 mx-auto gap-8 pt-48">
       <h2
         className={`${maruipol_bold.className} text-hack-green text-4xl lg:text-5xl my-2 text-center relative`}
       >

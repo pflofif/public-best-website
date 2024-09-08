@@ -10,12 +10,9 @@ const menuItems = [
   { label: "Про нас", href: "/about-us" },
   {
     label: "Блог",
-    href: "/blog",
+    href: "#",
     isDropdown: true,
-    dropdownItems: [
-      { label: "Blog 1", href: "#" },
-      { label: "Blog 2", href: "#" },
-    ],
+    dropdownItems: [],
   },
   { label: "Івенти", href: "/events" },
   { label: "Твої можливості", href: "/opportunities" },
