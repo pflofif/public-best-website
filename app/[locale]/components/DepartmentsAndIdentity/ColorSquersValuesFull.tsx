@@ -32,9 +32,6 @@ export default function ValuesPage() {
         alt=""
       />
       <ValuesBoxes />
-
-      
-
     </div>
   )
 }
