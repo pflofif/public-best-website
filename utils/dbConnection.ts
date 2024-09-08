@@ -6,11 +6,14 @@ if (!MONGODB_URI) {
     throw new Error('Please define the MONGODB_URI environment variable in .env.local');
 }
 
+// @ts-ignore - Ignore TypeScript error for non-existent global property
 let cached = global.mongoose;
 
 if (!cached) {
+    // @ts-ignore - Ignore TypeScript error for assignment
     cached = global.mongoose = { conn: null, promise: null };
 }
+
 
 export async function connectToDatabase() {
     if (cached.conn) {
@@ -25,9 +28,9 @@ export async function connectToDatabase() {
         };
 
         cached.promise = mongoose.connect(MONGODB_URI, options)
-        .then((mongoose) => {
-            return mongoose;
-        });
+            .then((mongoose) => {
+                return mongoose;
+            });
     }
 
     try {

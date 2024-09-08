@@ -3,7 +3,7 @@ export type Colors = "best-blue" | "best-pink" | "best-orange" | "best-green" | 
 interface ButtonLearnMoreProps {
   text: string,
   href: string,
-  btnColor: Colors,
+  btnColor: string,
   textColor: string
 }
 

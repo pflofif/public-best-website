@@ -1,5 +1,5 @@
 interface EventProps {
-    sectionColor: Colors,
+    sectionColor: string,
     imageName?: string,
     Base64Image?: string,
     isInverted?: boolean,
