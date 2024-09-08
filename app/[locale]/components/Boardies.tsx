@@ -129,7 +129,7 @@ const BoardieMobile = ({
 
 export default function Boardies() {
   return (
-    <div className="min-h-screen flex items-center justify-center mt-8 lg:mt-40 w-full">
+    <div className="flex items-center justify-center mt-8 lg:mt-40 w-full">
       {/* Desktop View */}
       <div className="gap-4 flex-wrap w-full justify-center my-8 max-w-6xl hidden md:flex">
         {boardiesData.map((p) => (
