@@ -39,17 +39,17 @@ export default function EventSliderSection() {
             <div className='absolute top-0 left-0 w-full h-full  z-0'><img className='w-full h-full object-cover' src="/eventSliderSectionBg.svg" alt='bg'></img></div>
             <div className='lg:flex items-center gap-10 md:gap-24 relative z-1 max-w-[1920px] mx-auto lg:px-[11%]'>
                 <div className='basis-[300px] xl:basis-[650px] lg:-mt-32  flex-shrink-0 text-center lg:text-left p-2'>
-                    <h2 className='text-4xl sm:text-6xl font-bold mb-16'>Чим ми займаємось?</h2>
+                    <h2 className='text-4xl sm:text-6xl font-bold mb-12'>Чим ми {window.innerWidth <= 1024 ? <br /> : <></>}  займаємось?</h2>
 
-
-                    <p className='mb-6'>
-                        Ми працюємо з 2002 року та вже більше 20 років допомагаємо студентам
-                        реалізовувати свій потенціал та здійснювати мрії.
-                    </p>
-                    <p className='mb-16'>
-                        Наші проєкт спрямовані на розвиток різноманітних навичок.
-                    </p>
-
+                    <div className="flex flex-col items-center md:items-start">
+                        <p className="mb-6 w-[324px] md:w-full text-center md:text-left ">
+                            Ми працюємо з 2002 року та вже більше 20 років допомагаємо студентам
+                            реалізовувати свій потенціал та здійснювати мрії.
+                        </p>
+                        <p className="mb-12 w-[324px] md:w-full text-center md:text-left">
+                            Наші проєкт спрямовані на розвиток різноманітних навичок.
+                        </p>
+                    </div>
 
                     <LinkLearnMore
                         btnColor='best-yellow'
@@ -74,31 +74,31 @@ export default function EventSliderSection() {
                             <SwiperElement
                                 title='BEST::HACKath0n'
                                 description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
-                                imageUrl='/eventImages/bec.png'
-                            />
-                        </SwiperSlide>
-
-                        <SwiperSlide>
-                            <SwiperElement
-                                title='BEST::HACKath0n'
-                                description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
                                 imageUrl='/eventImages/hack.jpg'
                             />
                         </SwiperSlide>
 
                         <SwiperSlide>
                             <SwiperElement
-                                title='BEST::HACKath0n'
-                                description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
+                                title='BEC'
+                                description="Наймасштабніші командні інженерні змагання Львову. Команди, які беруть участь в BEC змагаються у двох категоріях."
                                 imageUrl='/eventImages/bec.png'
                             />
                         </SwiperSlide>
 
                         <SwiperSlide>
                             <SwiperElement
-                                title='BEST::HACKath0n'
-                                description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
+                                title='ІЯК'
+                                description="ІЯК (Інженерний Ярмарок Кар’єри) —  це виставка провідних компаній для амбітних студентів та молодих спеціалістів, які бажають зробити перший крок до своєї кар’єри."
                                 imageUrl='/eventImages/ejf.png'
+                            />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <SwiperElement
+                                title='BEST Traning Week'
+                                description="BTW (BEST Training Week) — це тиждень безкоштовних насичених тренінгів, шерінгів, лекцій, воркшопів і т.п. для студентів різноманітних спеціальностей"
+                                imageUrl='/eventImages/btw.jpg'
                             />
                         </SwiperSlide>
 
