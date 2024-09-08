@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { maruipol_bold, inter } from "../../fonts/fonts";
 import Image from "next/image";
 
@@ -12,16 +13,16 @@ export default function HowOrganizationWork() {
                 <span>Як </span>
                 <span className="text-best-blue relative">Організація
                     <Image src="/HowOrganizationWork/organization_line_mobile.svg"
-                           className="absolute lg:hidden -right-8 -bottom-10 -z-10"
-                           alt=""
-                           width={208}
-                           height={128}
+                        className="absolute lg:hidden -right-8 -bottom-10 -z-10"
+                        alt=""
+                        width={208}
+                        height={128}
                     />
                     <Image src="/HowOrganizationWork/organization_line_desktop.svg"
-                           className="hidden lg:block absolute right-4 -bottom-10 w-80 -z-10"
-                           alt=""
-                           width={208}
-                           height={128}
+                        className="hidden lg:block absolute right-4 -bottom-10 w-80 -z-10"
+                        alt=""
+                        width={208}
+                        height={128}
                     />
                 </span>
 
@@ -106,8 +107,9 @@ export default function HowOrganizationWork() {
                             layout="fill"
                         />
                     </div>
-                    <div
-                        className="relative col-span-6 overflow-hidden bg-[rgba(255,241,108,1)] rounded-2xl lg:col-span-3">
+                    <Link href="/about-us"
+                        className="relative col-span-6 overflow-hidden bg-[rgba(255,241,108,1)] rounded-2xl lg:col-span-3
+                         transition duration-300 ease-in-out hover:scale-105">
                         <Image
                             src="/HowOrganizationWork/o6.svg"
                             className="w-full h-full object-cover"
@@ -116,22 +118,19 @@ export default function HowOrganizationWork() {
                             height={400}
                         />
                         <p className={`${inter.className} hidden lg:block absolute top-3 leading-tight left-3 text-sm`}>
-                            Допомогає<br/>творити прогрес
+                            Допомогає<br />творити прогрес
                         </p>
-                        <a href="#"
-                           className="">
-                            <Image
-                                src="/HowOrganizationWork/up%20right.svg"
-                                className="absolute top-2 right-2 h-auto transition duration-300 ease-in-out hover:scale-110 hover:opacity-75"
-                                alt=""
-                                width={35}
-                                height={35}
-                            />
-                        </a>
+                        <Image
+                            src="/HowOrganizationWork/up%20right.svg"
+                            className="absolute top-2 right-2 h-auto"
+                            alt=""
+                            width={35}
+                            height={35}
+                        />
                         <p className={`${maruipol_bold.className} absolute bottom-2 leading-tight left-2 lg:left-3 lg:bottom-4 text-[clamp(16px,calc(16px+44*(100vw-320px)/1024),40px)] lg:text-3xl`}>
-                            Структура <br/>BEST Lviv
+                            Структура <br />BEST Lviv
                         </p>
-                    </div>
+                    </Link>
                 </div>
 
 
