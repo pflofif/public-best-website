@@ -34,7 +34,7 @@ export default function Header() {
         <header className={`${inter.className} bg-best-blue text-white fixed top-0 left-0 w-full min-h-28 z-50 text-[20px] px-6 md:px-12`}>
             <div className="mx-auto flex justify-between items-center gap-x-5 h-[110px]">
                 {/* Logo */}
-                <Link href={"#"} className="flex items-center basis-32 shrink-0 z-50">
+                <Link href="/" className="flex items-center basis-32 shrink-0 z-50">
                     <img src="/best-logo.svg" alt="Best Lviv" width={123} height={64}
                         onClick={() => setIsOpen(false)}
                         className="max-h-12 lg:min-h-48" />

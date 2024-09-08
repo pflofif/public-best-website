@@ -5,7 +5,7 @@ export default function WhatIsBest() {
     return (
         <section className="   items-center justify-center max-w-7xl w-full px-[3.188rem]  mx-auto gap-8 lg:pt-[18.75rem] lg:pb-[10.625rem] pt-[5.125rem] pb-[8.25rem]">
             <h2
-                className={`{maruipol_bold.className} text-nowrap text-hack-green text-4xl lg:text-5xl mb-[3.5rem] lg:mb-[5.125rem] text-center relative`}>
+                className={`${maruipol_bold.className} text-nowrap text-hack-green text-4xl lg:text-5xl mb-[3.5rem] lg:mb-[5.125rem] text-center relative`}>
                 Що таке
                 <span className="text-best-blue"> BEST</span>
                 <Image
@@ -32,8 +32,8 @@ export default function WhatIsBest() {
                     className="absolute  lg:right-[-120px] lg:top-[-120px] transform scale-[0.25]  w-36 lg:w-52 -z-10"
                     alt=" "
                 />
-                <div className="bg-best-pink relative flex justify-center items-center order-2 w-full max-w-[600px] lg:max-w-none lg:order-1 lg:flex-1 p-[1.8rem] lg:px-[2.5rem] lg:py-[3.313rem]  sm:rounded-[50px] rounded-[20px]">
-                    <Image className=" h-full w-full object-cover" src="/WhatIsBest.jpg" alt={"event Image"} width={1852} height={1378}></Image>
+                <div className="bg-[#FFA5DB] relative flex justify-center items-center order-2 w-full max-w-[600px] lg:max-w-none lg:order-1 lg:flex-1 p-[1.8rem] lg:px-[2.5rem] lg:py-[3.313rem]  sm:rounded-[50px] rounded-[20px]">
+                    <Image className=" h-full w-full object-cover rounded-[15px]" src="/WhatIsBest.jpg" alt={"event Image"} width={1852} height={1378}></Image>
 
                     <Image
                         src="/whatbec-rightLinesMob.svg"
