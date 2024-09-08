@@ -3,11 +3,11 @@ import DepartmentsPage from "../components/DepartmentsAndIdentity/ColorSquersDep
 import RectangleBoard from "../components/ServicesAndBoard/RectangleBoard";
 
 export default function Page() {
-    return (
-        <div>
-            <RectangleBoard />
-            {/* <Boardies /> */}
-            <DepartmentsPage />
-        </div>
-    )
+  return (
+    <div>
+      <RectangleBoard />
+      <Boardies />
+      <DepartmentsPage />
+    </div>
+  );
 }
