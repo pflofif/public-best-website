@@ -1,27 +1,28 @@
+import Link from "next/link";
 import { maruipol_bold, inter } from "../../fonts/fonts"
 import Image from "next/image";
 
 const socialLinks = [
-  { src: "/linkedin.svg", alt: "LinkedIn", href: "https://t.me/bestlviv" },
-  { src: "/instagram.svg", alt: "Instagram", href: "https://t.me/bestlviv" },
+  { src: "/linkedin.svg", alt: "LinkedIn", href: "https://www.linkedin.com/company/bestlviv/posts" },
+  { src: "/instagram.svg", alt: "Instagram", href: "https://www.instagram.com/best_lviv?igsh=dTNwNDc3YTJoOW9t" },
   { src: "/telegram.svg", alt: "Telegram", href: "https://t.me/bestlviv" },
-  { src: "/tik_tok.svg", alt: "TikTok", href: "https://t.me/bestlviv" },
-  { src: "/youtube.svg", alt: "YouTube", href: "https://t.me/bestlviv" },
+  { src: "/tik_tok.svg", alt: "TikTok", href: "https://www.tiktok.com/@best__lviv?_t=8pY6lfMTdkk&_r=1" },
+  { src: "/youtube.svg", alt: "YouTube", href: "https://www.youtube.com/@BEST_Lviv" },
 ];
 
 const footerLinks = [
-  { href: "https://t.me/bestlviv", text: "Про нас" },
-  { href: "https://t.me/bestlviv", text: "Блог" },
-  { href: "https://t.me/bestlviv", text: "Івенти" },
-  { href: "https://t.me/bestlviv", text: "Можливості" },
-  { href: "https://t.me/bestlviv", text: "Галерея" },
-  { href: "https://t.me/bestlviv", text: "Q/A" },
-  { href: "https://t.me/bestlviv", text: "Контакти" },
+  { href: "/about-us", text: "Про нас" },
+  { href: "/blog", text: "Блог" },
+  { href: "/events", text: "Івенти" },
+  { href: "/opportunities", text: "Можливості" },
+  { href: "/gallery", text: "Галерея" },
+  { href: "/qa", text: "Q/A" },
+  { href: "/contacts", text: "Контакти" },
 ];
 
 const renderSocialLinks = () =>
   socialLinks.map(({ src, alt, href }) => (
-    <a key={alt} href={href} className="hover:scale-105">
+    <a target="_blank" key={alt} href={href} className="hover:scale-105">
       <Image
         src={src}
         width={30}
@@ -33,9 +34,9 @@ const renderSocialLinks = () =>
 
 const renderFooterLinks = () =>
   footerLinks.map(({ href, text }) => (
-    <a key={text} href={href} className="hover:scale-105">
+    <Link key={text} href={href} className="hover:scale-105">
       <h1>{text}</h1>
-    </a>
+    </Link>
   ));
 
 export default function Footer() {
