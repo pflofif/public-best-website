@@ -1,5 +1,6 @@
 import DepartmentsBoxes from "./ColorSquersDepartments"
 import Image from "next/image"
+import { maruipol_bold, inter } from '../../../fonts/fonts';
 
 export default function DepartmentsPage() {
     return (
@@ -18,8 +19,8 @@ export default function DepartmentsPage() {
 
             </h1>
 
-            <p className="text-center text-sm lg:text-base lg:mb-2 max-w-screen-md lg:font-inter">
-                Для того аби люди могли розвиватись, здобувати нові скіли та рости необхідна комплексна система, яка буде навчати у різних сферах.
+            <p className={`${inter.className} text-center text-sm lg:text-base lg:mb-2 lg:pt-8 max-w-screen-md w-[328px] lg:w-[884px]`}>
+                Для того аби люди могли розвиватись, здобувати нові скіли та рости необхідна комплексна система, яка буде навчати у різних сферах. <br />
                 Саме для такого в BESTі існують департаменти, у кожному з яких ми можемо розвиватись.
             </p>
             <DepartmentsBoxes />
