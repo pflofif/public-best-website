@@ -4,7 +4,7 @@ interface ButtonLearnMoreProps {
   text: string,
   href: string,
   btnColor: Colors,
-  textColor: Colors
+  textColor: string
 }
 
 import Image from 'next/image'
