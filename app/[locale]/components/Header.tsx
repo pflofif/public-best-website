@@ -19,7 +19,7 @@ const menuItems = [
   },
   { label: "Івенти", href: "/events" },
   { label: "Твої можливості", href: "/opportunities" },
-  { label: "Галерея", href: "/gallera" },
+  { label: "Галерея", href: "/gallery" },
   { label: "Q/A", href: "/qa" },
 ];
 
