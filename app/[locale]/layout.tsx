@@ -6,7 +6,10 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 
 export const metadata: Metadata = {
-  title: 'BEST Lviv'
+  title: 'BEST Lviv',
+  icons: {
+    icon: "/logo.png"
+  }
 }
 
 interface RootLayoutProps {
