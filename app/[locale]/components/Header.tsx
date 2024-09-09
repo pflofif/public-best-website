@@ -28,10 +28,7 @@ const menuItems: MenuItem[] = [
     label: "Блог",
     href: "#",
     isDropdown: true,
-    dropdownItems: [
-      { label: "Latest News", href: "/blog/news" },
-      { label: "Events", href: "/blog/events" }
-    ],
+    dropdownItems: [],
   },
   { label: "Івенти", href: "/events", isDropdown: false },
   { label: "Твої можливості", href: "/opportunities", isDropdown: false },
