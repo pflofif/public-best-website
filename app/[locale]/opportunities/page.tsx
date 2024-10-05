@@ -19,7 +19,7 @@ export default function Page() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("/api/events/in-progress")
+        fetch("/api/events/in-progress", { cache: "no-store" })
             .then((response) => response.json())
             .then((data) => {
                 setEvents(data);
