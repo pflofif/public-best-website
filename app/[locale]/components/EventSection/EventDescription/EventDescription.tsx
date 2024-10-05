@@ -18,8 +18,7 @@ import EventLine from "./EventLine"
 const EventDescription = ({ descColor: descColor, headingText: headingText, descriptionText: descriptionText, link: link }: EventDescriptionProps) => {
     const textColor = headingText === 'Інженерний Ярмарок Кар’єри'
         ? "text-white" : "text-black";
-console.log(headingText)
-console.log(textColor)
+
     return (
         <div className={`basis-[560px] flex max-lg:items-center flex-col order-1`}>
             <div className={"mb-6 max-lg:hidden"}>
