@@ -15,6 +15,7 @@ type EventType = {
     data: string;
     sectionColor: string;
     isInProgress: boolean;
+    link: string;
 };
 
 export default function Page() {
@@ -82,6 +83,7 @@ export default function Page() {
                         sectionColor={event.sectionColor}
                         Base64Image={event.data}
                         isInverted={index % 2 !== 0}
+                        link={event.link}
                     />
                 ))}
             </section>
