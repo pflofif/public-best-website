@@ -24,7 +24,7 @@ export default function Page() {
     const eventsT = useTranslations("Events");
 
     useEffect(() => {
-        fetch("/api/events")
+        fetch("http://localhost:8080/events")
             .then((response) => response.json())
             .then((data) => {
                 setEvents(data);
