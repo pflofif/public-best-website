@@ -20,7 +20,7 @@ export default function Page() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("/api/events/in-progress", { cache: "no-store" })
+        fetch("https://best-lviv-website-api.fly.dev/events/in-progress", { cache: "no-store" })
             .then((response) => response.json())
             .then((data) => {
                 setEvents(data);
