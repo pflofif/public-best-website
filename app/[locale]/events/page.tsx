@@ -20,20 +20,69 @@ type EventType = {
 
 export default function Page() {
     const [events, setEvents] = useState<EventType[]>([]);
-    const [loading, setLoading] = useState(true);
-    const eventsT = useTranslations("Events");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:8080/events")
-            .then((response) => response.json())
-            .then((data) => {
-                setEvents(data);
+        const fetchEvents = async () => {
+            try {
+                const response = await fetch("http://localhost:8080/events");
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                if (!response.body) {
+                    throw new Error("ReadableStream not supported in this environment.");
+                }
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let receivedData = "";
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) {
+                        break; // The stream has ended
+                    }
+
+                    // Decode the received chunk of data
+                    const chunk = decoder.decode(value, { stream: true });
+                    receivedData += chunk;
+
+                    // Split the received data into individual events
+                    let eventsArray = receivedData.split("\n");
+
+                    // Keep the last, potentially incomplete event data
+                    receivedData = eventsArray.pop() || "";
+
+                    // Process each complete event
+                    for (let eventString of eventsArray) {
+                        try {
+                            const parsedEvent = JSON.parse(eventString);
+                            setEvents(prevEvents => [...prevEvents, parsedEvent]);
+                        } catch (e) {
+                            console.error("Error parsing event:", e);
+                        }
+                    }
+                }
+
+                // Process any remaining data
+                if (receivedData.trim()) {
+                    try {
+                        const lastEvent = JSON.parse(receivedData);
+                        setEvents(prevEvents => [...prevEvents, lastEvent]);
+                    } catch (e) {
+                        console.error("Error parsing the last event:", e);
+                    }
+                }
+            } catch (err) {
+                console.error("Error fetching events:", err);
+            } finally {
                 setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching in-progress events:", error);
-                setLoading(false);
-            });
+            }
+        };
+
+        fetchEvents();
     }, []);
 
     if (loading) {
