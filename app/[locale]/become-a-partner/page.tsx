@@ -182,7 +182,6 @@ const BecomeAPartner = () => {
         className="absolute top-72 right-48 md:right-96 w-6 md:w-8 -z-10 rotate-90"
         alt=" "
       />
-      />
       <Image
         src="/stars.svg"
         width={292}
