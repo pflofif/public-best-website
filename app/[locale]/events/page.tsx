@@ -15,24 +15,69 @@ type EventType = {
     data: string;
     sectionColor: string;
     isInProgress: boolean;
+    link: string;
 };
 
 export default function Page() {
     const [events, setEvents] = useState<EventType[]>([]);
-    const [loading, setLoading] = useState(true);
-    const eventsT = useTranslations("Events");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetch("/api/events")
-            .then((response) => response.json())
-            .then((data) => {
-                setEvents(data);
+        const fetchEvents = async () => {
+            try {
+                const response = await fetch("https://best-lviv-website-api.fly.dev/events");
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                if (!response.body) {
+                    throw new Error("ReadableStream not supported in this environment.");
+                }
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let receivedData = "";
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) {
+                        break; 
+                    }
+
+                    const chunk = decoder.decode(value, { stream: true });
+                    receivedData += chunk;
+
+                    let eventsArray = receivedData.split("\n");
+
+                    receivedData = eventsArray.pop() || "";
+
+                    for (let eventString of eventsArray) {
+                        try {
+                            const parsedEvent = JSON.parse(eventString);
+                            setEvents(prevEvents => [...prevEvents, parsedEvent]);
+                        } catch (e) {
+                            console.error("Error parsing event:", e);
+                        }
+                    }
+                }
+
+                if (receivedData.trim()) {
+                    try {
+                        const lastEvent = JSON.parse(receivedData);
+                        setEvents(prevEvents => [...prevEvents, lastEvent]);
+                    } catch (e) {
+                        console.error("Error parsing the last event:", e);
+                    }
+                }
+            } catch (err) {
+                console.error("Error fetching events:", err);
+            } finally {
                 setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching in-progress events:", error);
-                setLoading(false);
-            });
+            }
+        };
+
+        fetchEvents();
     }, []);
 
     if (loading) {
@@ -82,11 +127,10 @@ export default function Page() {
                         sectionColor={event.sectionColor}
                         Base64Image={event.data}
                         isInverted={index % 2 !== 0}
+                        link={event.link}
                     />
                 ))}
             </section>
         </div>
     )
 }
-
-

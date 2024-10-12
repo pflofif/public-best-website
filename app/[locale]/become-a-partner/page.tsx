@@ -17,49 +17,50 @@ const validationSchema = Yup.object({
 
 
 interface FormInputProps {
-    name: string;
-    type?: string;
-    placeholder: string;
-    formik: FormikProps<any>; // Adjust the generic type based on your form values
-    ref?: React.RefObject<HTMLInputElement>; // Use React.RefObject for the input ref
-  }
-  
-  const FormInput: React.FC<FormInputProps> = ({ name, type = "text", placeholder, formik, ref }) => (
-    <div className="relative py-2 w-full">
-      <input
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        className="w-full mt-4 p-5 border-2 border-gray-300 focus:border-best-blue text-lg bg-transparent rounded-xl min-w-[200px] md:min-w-[400px] lg:min-w-[600px]"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values[name]}
-        ref={ref}
-      />
-      {formik.touched[name] && formik.errors[name] ? (
-        <div className="absolute text-red-400 left-0 -bottom-4 text-sm">
-          {formik.errors[name]}
-        </div>
-      ) : null}
-    </div>
-  );
-  
-  
-  interface SubmitButtonProps {
-    isValid: boolean;
-    isSubmitting: boolean;
-  }
-  
-  const SubmitButton: React.FC<SubmitButtonProps> = ({ isValid, isSubmitting }) => (
-    <button
-      disabled={!isValid || isSubmitting}
-      className={`${maruipol_bold.className} rounded-3xl bg-best-yellow hover:scale-105 duration-500 w-full text-best-blue px-10 py-4 my-5 self-center text-md`}
-      type="submit"
-    >
-      Відправити
-    </button>
-  );
-  
+  name: string;
+  type?: string;
+  placeholder: string;
+  /** @ts-expect-error */
+  formik: FormikProps<any>; // Adjust the generic type based on your form values
+  ref?: React.RefObject<HTMLInputElement>; // Use React.RefObject for the input ref
+}
+
+const FormInput: React.FC<FormInputProps> = ({ name, type = "text", placeholder, formik, ref }) => (
+  <div className="relative py-2 w-full">
+    <input
+      type={type}
+      name={name}
+      placeholder={placeholder}
+      className="w-full mt-4 p-5 border-2 border-gray-300 focus:border-best-blue text-lg bg-transparent rounded-xl min-w-[200px] md:min-w-[400px] lg:min-w-[600px]"
+      onChange={formik.handleChange}
+      onBlur={formik.handleBlur}
+      value={formik.values[name]}
+      ref={ref}
+    />
+    {formik.touched[name] && formik.errors[name] ? (
+      <div className="absolute text-red-400 left-0 -bottom-4 text-sm">
+        {formik.errors[name]}
+      </div>
+    ) : null}
+  </div>
+);
+
+
+interface SubmitButtonProps {
+  isValid: boolean;
+  isSubmitting: boolean;
+}
+
+const SubmitButton: React.FC<SubmitButtonProps> = ({ isValid, isSubmitting }) => (
+  <button
+    disabled={!isValid || isSubmitting}
+    className={`${maruipol_bold.className} rounded-3xl bg-best-yellow hover:scale-105 duration-500 w-full text-best-blue px-10 py-4 my-5 self-center text-md`}
+    type="submit"
+  >
+    Відправити
+  </button>
+);
+
 const BecomeAPartner = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -147,33 +148,33 @@ const BecomeAPartner = () => {
         </div>
       </div>
       <Image
-            src="/Partners_bg.svg"
-            layout="fill"
-            objectFit="cover"
-            className="w-full h-full -z-20 opacity-100"
-            alt=""
-        />
-        <Image
+        src="/Partners_bg.svg"
+        layout="fill"
+        objectFit="cover"
+        className="w-full h-full -z-20 opacity-100"
+        alt=""
+      />
+      <Image
         src="/stars.svg"
         width={292}
         height={102}
         className="absolute bottom-2 md:bottom-24 right-2 md:right-24 w-12 w-8 -z-10"
         alt=" "
-        />
-        <Image
-            src="/stars.svg"
-            width={292}
-            height={102}
-            className="absolute top-48 left-24 md:left-72 w-8 md:w-12 -z-10 rotate-45"
-            alt=" "
-        />
-        <Image
-            src="/stars.svg"
-            width={292}
-            height={102}
-            className="absolute top-72 right-48 md:right-96 w-6 md:w-8 -z-10 rotate-90"
-            alt=" "
-        />
+      />
+      <Image
+        src="/stars.svg"
+        width={292}
+        height={102}
+        className="absolute top-48 left-24 md:left-72 w-8 md:w-12 -z-10 rotate-45"
+        alt=" "
+      />
+      <Image
+        src="/stars.svg"
+        width={292}
+        height={102}
+        className="absolute top-72 right-48 md:right-96 w-6 md:w-8 -z-10 rotate-90"
+        alt=" "
+      />
     </section>
   );
 };

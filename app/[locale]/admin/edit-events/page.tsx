@@ -8,6 +8,8 @@ type EventType = {
     description: string;
     data: string; // Base64 encoded image
     isInProgress: boolean;
+    sectionColor: string;
+    link: string;
 };
 
 export default function EventsPage() {
@@ -17,6 +19,8 @@ export default function EventsPage() {
         description: '',
         data: '', // Image as Base64
         isInProgress: false,
+        sectionColor: '',
+        link: ''
     });
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -86,6 +90,8 @@ export default function EventsPage() {
             description: event.description,
             data: event.data,
             isInProgress: event.isInProgress,
+            sectionColor: event.sectionColor,
+            link: event.link
         });
         setImagePreview(event.data);
         setIsEditing(true);
@@ -105,7 +111,7 @@ export default function EventsPage() {
     };
 
     const resetForm = () => {
-        setFormData({ name: '', description: '', data: '', isInProgress: false });
+        setFormData({ name: '', description: '', data: '', isInProgress: false, sectionColor: '', link: '' });
         setImagePreview(null);
         setIsEditing(false);
         setEditId(null);
@@ -135,6 +141,30 @@ export default function EventsPage() {
                             name="description"
                             placeholder="Description"
                             value={formData.description}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700">Section Color</label>
+                        <input
+                            type="text"
+                            name="sectionColor"
+                            placeholder="Section Color"
+                            value={formData.sectionColor}
+                            onChange={handleInputChange}
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700">Link to website</label>
+                        <input
+                            type="text"
+                            name="link"
+                            placeholder="Link to websitr"
+                            value={formData.link}
                             onChange={handleInputChange}
                             required
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"

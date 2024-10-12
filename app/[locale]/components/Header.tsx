@@ -6,18 +6,34 @@ import { inter } from "../../fonts/fonts";
 import Link from "next/link";
 import { cn } from "../../lib/utils";
 
-const menuItems = [
-  { label: "Про нас", href: "/about-us" },
+type DropdownItem = {
+  label: string;
+  href: string;
+};
+
+type MenuItem = {
+  label: string;
+  href: string;
+  isDropdown?: false;
+} | {
+  label: string;
+  href: string;
+  isDropdown: true;
+  dropdownItems: DropdownItem[];
+};
+
+const menuItems: MenuItem[] = [
+  { label: "Про нас", href: "/about-us", isDropdown: false },
   {
     label: "Блог",
     href: "#",
     isDropdown: true,
     dropdownItems: [],
   },
-  { label: "Івенти", href: "/events" },
-  { label: "Твої можливості", href: "/opportunities" },
-  { label: "Галерея", href: "/gallery" },
-  { label: "Q/A", href: "/qa" },
+  { label: "Івенти", href: "/events", isDropdown: false },
+  { label: "Твої можливості", href: "/opportunities", isDropdown: false },
+  { label: "Галерея", href: "/gallery", isDropdown: false },
+  { label: "Q/A", href: "/qa", isDropdown: false },
 ];
 
 const MenuItems = ({ setIsOpen }: { setIsOpen: (arg0: boolean) => void }) => {
@@ -69,7 +85,7 @@ const MenuItems = ({ setIsOpen }: { setIsOpen: (arg0: boolean) => void }) => {
               ))}
             </div>
           </li>
-        ),
+        )
       )}
     </>
   );

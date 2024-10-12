@@ -238,11 +238,11 @@ const BoardiesSwiper = ({
         delay: 2000,
         disableOnInteraction: false,
       }}
-      navigation={true}
+      // navigation={true}
       keyboard={{
         enabled: true,
       }}
-      modules={[Autoplay, Navigation, Keyboard]}
+      modules={[Autoplay, Keyboard]}
       className="flex items-center justify-center mx-auto w-full"
     >
       {boardiesData.map((p) => (

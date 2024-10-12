@@ -1,26 +1,27 @@
 interface EventProps {
-    sectionColor: Colors,
+    sectionColor: string,
     imageName?: string,
     Base64Image?: string,
     isInverted?: boolean,
     heading: string,
-    description: string
+    description: string,
+    link: string
 }
 
 import EventImage from "./EventImage"
 import EventDescription from "./EventDescription/EventDescription"
 import { Colors } from "../LinkLearnMore";
-const Event = ({ sectionColor: sectionColor, imageName: imageName, Base64Image: Base64Image, heading: heading, description: desc, isInverted: isInverted }: EventProps) => {
+const Event = ({ sectionColor: sectionColor, imageName: imageName, Base64Image: Base64Image, heading: heading, description: desc, isInverted: isInverted, link: link }: EventProps) => {
     const imageUrl = imageName !== undefined
         ? `/eventImages/${imageName}.png`
         : Base64Image!;
-
+        
     return (
         <div className="px-12 flex justify-evenly items-center flex-wrap min-lg:mb-[250px] mb-[100px] min-lg:gap-10 gap-7">
             <EventImage borderColor={sectionColor}
                 imageUrl={imageUrl}
                 isInverted={isInverted} />
-            <EventDescription descriptionText={desc} headingText={heading} descColor={sectionColor} ></EventDescription>
+            <EventDescription descriptionText={desc} headingText={heading} descColor={sectionColor} link={link}></EventDescription>
         </div>
     )
 
