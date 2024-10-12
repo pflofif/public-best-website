@@ -238,7 +238,7 @@ const BoardiesSwiper = ({
         delay: 2000,
         disableOnInteraction: false,
       }}
-      navigation={true}
+      // navigation={true}
       keyboard={{
         enabled: true,
       }}

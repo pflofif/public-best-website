@@ -75,11 +75,12 @@ export default function Page() {
 
             <section className="max-w-[1440px] mx-auto">
                 {events.map((event, index) => (
+                     // @ts-ignore - Ignore type error for sectionColor
                     <Event
                         key={event._id}
                         heading={event.name}
                         description={event.description}
-                        sectionColor={event.sectionColor}
+                        sectionColor={event.sectionColor as any}
                         Base64Image={event.data}
                         isInverted={index % 2 !== 0}
                     />

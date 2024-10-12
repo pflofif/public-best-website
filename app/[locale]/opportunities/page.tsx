@@ -56,20 +56,20 @@ export default function Page() {
                     alt=""
                 />
 
-                <div className="py-20 lg:pt-48 lg:pb-28 flex items-center w-full justify-center flex-col p-6">
+                <div className="py-8 lg:pt-48 lg:pb-28 flex items-center w-full justify-center flex-col p-6">
                     <h1 className={`${maruipol_bold.className} text-3xl lg:text-5xl lg:font-bold font-bold lg:mb-6 mb-8 text-center relative`}>
                         <span className="text-black">Актуальні Можливості</span> <span className="text-blue-500">Для Тебе</span>
                         <Image
                             src="/deps.svg"
                             width={292}
                             height={102}
-                            className="w-24 lg:w-44 absolute top-6 -right-2 lg:-right-8 -z-10"
+                            className="hidden md:block w-24 lg:w-44 absolute top-6 -right-2 lg:-right-8 -z-10"
                             alt=""
                         />
 
                     </h1>
 
-                    <p className={`${inter.className} text-center text-sm lg:text-base lg:pt-8 max-w-screen-md lg:font-inter`}>
+                    <p className={`${inter.className} text-center text-sm py-4 lg:py-0 lg:pt-8 max-w-screen-md`}>
                         Усі івенти ми робимо для студентів абсолютно безкоштовно!<br />
                         Саме зараз у вас є можливість взяти участь у таких внутрішніх та міжнародних ініціативах
                     </p>

@@ -1,6 +1,6 @@
 
 interface EventDescriptionProps {
-    descColor: Colors,
+    descColor: string,
 
     headingText: string,
     descriptionText: string,

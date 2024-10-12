@@ -3,8 +3,8 @@ export type Colors = "best-blue" | "best-pink" | "best-orange" | "best-green" | 
 interface ButtonLearnMoreProps {
   text: string,
   href: string,
-  btnColor: Colors,
-  textColor: Colors
+  btnColor: string,
+  textColor: string
 }
 
 import Image from 'next/image'
