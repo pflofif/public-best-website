@@ -30,6 +30,9 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
 
   return (
     <html lang={params.locale} suppressHydrationWarning={true}>
+      <head>
+        <meta name="google-site-verification" content="JNS6t3-KidakRhhnB8X61npK3VZkpGGvTsFH_zkoMow" />
+      </head>
       <NextIntlClientProvider locale={params.locale} messages={messages}>
         <body suppressHydrationWarning={true}>
           <Header />
