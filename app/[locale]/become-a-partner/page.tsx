@@ -155,10 +155,31 @@ const BecomeAPartner = () => {
         alt=""
       />
       <Image
+        src="/Partners_bg.svg"
+        layout="fill"
+        objectFit="cover"
+        className="w-full h-full -z-20 opacity-100"
+        alt=""
+      />
+      <Image
         src="/stars.svg"
         width={292}
         height={102}
         className="absolute bottom-2 md:bottom-24 right-2 md:right-24 w-12 w-8 -z-10"
+        alt=" "
+      />
+      <Image
+        src="/stars.svg"
+        width={292}
+        height={102}
+        className="absolute top-48 left-24 md:left-72 w-8 md:w-12 -z-10 rotate-45"
+        alt=" "
+      />
+      <Image
+        src="/stars.svg"
+        width={292}
+        height={102}
+        className="absolute top-72 right-48 md:right-96 w-6 md:w-8 -z-10 rotate-90"
         alt=" "
       />
       <Image

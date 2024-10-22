@@ -1,4 +1,3 @@
-// app/api/events/route.ts
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from "../../../../utils/dbConnection"
 import Event from '../../../../models/event';
