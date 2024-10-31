@@ -7,6 +7,7 @@ const nextConfig = {
         // !! WARN !!
         ignoreBuildErrors: true,
     },
+    output: "standalone"
 }
 
 const withNextIntl = require('next-intl/plugin')('./i18n.ts');
