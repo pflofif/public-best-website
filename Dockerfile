@@ -32,4 +32,4 @@ FROM base as dev
 ENV NODE_ENV=development
 RUN npm install 
 COPY . .
-CMD npm run dev -H 0.0.0.0 -p 3000
+CMD HOST=0.0.0.0 npm run dev 
