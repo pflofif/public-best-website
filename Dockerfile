@@ -1,35 +1,48 @@
-FROM node:18-alpine as base
-RUN apk add --no-cache g++ make py3-pip libc6-compat
-WORKDIR /app
-COPY package*.json ./
-EXPOSE 3000
+# Stage 1: Build the application
+# Use an official Node.js image as the base for the build stage
+FROM node:18-alpine AS build
 
-FROM base as builder
+# Set the working directory in the container
 WORKDIR /app
+
+# Copy package.json and package-lock.json files to install dependencies
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application files
 COPY . .
+
+# Set environment variables if needed (e.g., NEXT_PUBLIC_API_URL)
+# ENV NEXT_PUBLIC_API_URL="https://api.example.com"
+
+# Build the Next.js application
 RUN npm run build
 
+# Stage 2: Run the application
+# Use a smaller Node.js image for the runtime stage
+FROM node:18-alpine AS runtime
 
-FROM base as production
+# Set environment variable to use production optimizations
+ENV NODE_ENV=production
+
+# Set the working directory
 WORKDIR /app
 
-ENV NODE_ENV=production
-RUN npm ci
+# Copy package.json and package-lock.json for production dependencies
+COPY package.json package-lock.json ./
 
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
-USER nextjs
+# Install only production dependencies
+RUN npm install --production
 
+# Copy the Next.js build output and necessary files
+COPY --from=build /app/.next ./.next
+COPY --from=build /app/public ./public
+COPY --from=build /app/next.config.js ./next.config.js
 
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/public ./public
+# Expose the port that the application will run on
+EXPOSE 3000
 
-CMD npm start
-
-FROM base as dev
-ENV NODE_ENV=development
-RUN npm install 
-COPY . .
-CMD HOST=0.0.0.0 npm run dev 
+# Start the application
+CMD ["npm", "run", "start"]
