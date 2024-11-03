@@ -26,6 +26,7 @@ FROM node:18-alpine AS runtime
 
 # Set environment variable to use production optimizations
 ENV NODE_ENV=production
+ENV HOST=0.0.0.0
 
 # Set the working directory
 WORKDIR /app
@@ -45,4 +46,5 @@ COPY --from=build /app/next.config.js ./next.config.js
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "run", "start"]
+# Replace the CMD line with the following
+CMD ["npm", "run", "start", "--", "-H", "0.0.0.0"]

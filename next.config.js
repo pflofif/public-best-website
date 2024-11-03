@@ -7,7 +7,10 @@ const nextConfig = {
         // !! WARN !!
         ignoreBuildErrors: true,
     },
-    output: "standalone"
+    output: "standalone",
+    serverRuntimeConfig: {
+        host: process.env.HOST || '0.0.0.0',
+    }
 }
 
 const withNextIntl = require('next-intl/plugin')('./i18n.ts');
