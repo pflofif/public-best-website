@@ -52,7 +52,7 @@ export default function Page() {
             >
                 Привіт, <span className="text-best-blue">Студенте</span>! 👋
             </h2>
-            <p className={`${inter.className} text-center text-md lg:text-lg mt-4`}>
+            <p className={`${inter.className} text-center paragraphMobile md:text-paragraphDesktop mt-4`}>
                 Шукав місце де ти хочеш розвинутись та круто провести свої студентські
                 роки? <br />
                 Ось це твій шанс!
@@ -61,7 +61,7 @@ export default function Page() {
             <div className="flex flex-col lg:flex-row items-center justify-between mt-10 w-full">
                 <div className="bg-white shadow-lg rounded-lg p-8 min-h-[475px]">
                     <h1 className={`${maruipol_bold.className} text-4xl mb-4 text-center`}>Якщо ти:</h1>
-                    <ul className={`${inter.className} space-y-2 text-md`}>
+                    <ul className={`${inter.className} space-y-2 paragraphMobile md:text-paragraphDesktop`}>
                         <li>• Студент або аспірант до 28 років</li>
                         <li>• Навчаєшся у НУ “Львівська Політехніка”</li>
                         <li>• Хочеш прокачати своє життя на максимум</li>

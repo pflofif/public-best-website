@@ -50,7 +50,7 @@ export default function WhatIsBest() {
           />
         </div>
         <div
-          className={`${inter.className} relative order-1 xl:order-2 basis-[700px]  bg-best-yellow  p-[0.9rem] sm:px-[2.5rem] sm:py-[3.313rem] text-base lg:text-lg sm:rounded-[50px] rounded-[20px]`}
+          className={`${inter.className} relative order-1 xl:order-2 basis-[700px]  bg-best-yellow  p-[0.9rem] sm:px-[2.5rem] sm:py-[3.313rem] paragraphMobile md:text-paragraphDesktop sm:rounded-[50px] rounded-[20px]`}
         >
           <Image
             src="/whatbec-leftLinesMob.svg"
@@ -59,7 +59,7 @@ export default function WhatIsBest() {
             className="absolute lg:hidden left-[-80px] top-[-70px] transform scale-[0.35]  w-36 lg:w-52 -z-10"
             alt=" "
           />
-          <p className=" mb-8 lg:mb-12">
+          <p className="text-paragraphDesktop mb-8 lg:mb-12">
             BEST (Board of European Students of Technology) – міжнародна
             неприбуткова, неполітична, молодіжна громадська організація, яка
             була створена 1989 року в Берліні.
@@ -70,11 +70,11 @@ export default function WhatIsBest() {
             Осередок BEST Lviv
           </h3>
           <div>
-            <p>
+            <p className="paragraphMobile md:text-paragraphDesktop">
               Осередок BEST Lviv було створено у 2002 році при Національному
               університеті “Львівська політехніка”.
             </p>
-            <p>
+            <p className="paragraphMobile md:text-paragraphDesktop">
               Наша діяльність полягає у налагодженні зв'язків між Студентами,
               Компаніями та Університетом. Львівський осередок є одним з трьох
               LBG в Україні (Київ, Львів, Вінниця)

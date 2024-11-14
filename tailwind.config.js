@@ -19,6 +19,10 @@ module.exports = {
         "min-lg": { min: "1312px" },
         "max-lg": { max: "1312px" },
       },
+      fontSize: {
+        paragraphDesktop: "1.125rem",
+        paragraphMobile: "1rem",
+      }
     },
   },
   plugins: [],

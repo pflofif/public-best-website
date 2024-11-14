@@ -27,7 +27,7 @@ export default function Timeline() {
                         <span className='w-[20px] h-[20px] rounded-full bg-best-blue mt-2 absolute left-[-20px]'></span>
                         <div className='flex flex-col items-start w-auto max-h-20 ml-6'>
                             <span className='text-2xl text-best-blue font-bold'>{event.year}</span>
-                            <p className='text-base max-w-48'>{event.description}</p>
+                            <p className='paragraphMobile md:text-paragraphDesktop max-w-48'>{event.description}</p>
                         </div>
                     </div>
                 ))}

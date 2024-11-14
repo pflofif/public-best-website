@@ -54,7 +54,7 @@ interface SubmitButtonProps {
 const SubmitButton: React.FC<SubmitButtonProps> = ({ isValid, isSubmitting }) => (
   <button
     disabled={!isValid || isSubmitting}
-    className={`${maruipol_bold.className} rounded-3xl bg-best-yellow hover:scale-105 duration-500 w-full text-best-blue px-10 py-4 my-5 self-center text-md`}
+    className={`${maruipol_bold.className} rounded-3xl bg-best-yellow hover:scale-105 duration-500 w-full text-best-blue px-10 py-4 my-5 self-center paragraphMobile md:text-paragraphDesktop`}
     type="submit"
   >
     Відправити
@@ -114,7 +114,7 @@ const BecomeAPartner = () => {
         />
       </h2>
       <p
-        className={`${inter.className} text-best-gray md:text-lg text-md my-2 text-center max-w-2xl`}
+        className={`${inter.className} text-best-gray paragraphMobile md:text-paragraphDesktop my-2 text-center max-w-2xl`}
       >
         Якщо ви бажаєте долучитися до наших проєктів або отримати більше
         інформації про актуальні можливості співпраці, будь ласка, зв'яжіться з
