@@ -8,7 +8,7 @@ export default function ValuesPage() {
 
     <div className="min-h-screen flex items-center w-full justify-center flex-col">
       <h1 className=" text-3xl lg:text-5xl lg:font-bold font-bold lg:mb-6 mb-8 text-center relative">
-        <span className="text-black">Наші</span> <span className="text-blue-500">Цінності</span>
+        <span className="text-black">Наші</span> <span className="text-best-blue">Цінності</span>
         <Image
           src="./deps.svg"
           width={292}

@@ -59,7 +59,7 @@ export default function Page() {
 
                 <div className="py-8 lg:pt-48 lg:pb-28 flex items-center w-full justify-center flex-col p-6">
                     <h1 className={`${maruipol_bold.className} text-3xl lg:text-5xl lg:font-bold font-bold lg:mb-6 mb-8 text-center relative`}>
-                        <span className="text-black">Актуальні Можливості</span> <span className="text-blue-500">Для Тебе</span>
+                        <span className="text-black">Актуальні Можливості</span> <span className="text-best-blue">Для Тебе</span>
                         <Image
                             src="/deps.svg"
                             width={292}

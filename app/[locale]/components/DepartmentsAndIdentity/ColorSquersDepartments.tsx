@@ -7,7 +7,7 @@ export default function DepartmentsBoxes() {
             <ColorfulSquare emojiUri="/Departments/DS.svg" bgColor="bg-best-pink" text="Design" textColor="" />
             <ColorfulSquare emojiUri="/Departments/HR.svg" bgColor="bg-best-yellow" text="Human Recourses" textColor="" />
             <ColorfulSquare emojiUri="/Departments/IT.svg" bgColor="bg-best-green" text="Information Technologies" textColor="" />
-            <ColorfulSquare emojiUri="/Departments/FR.svg" bgColor="bg-best-blue" text="Fundraising" textColor="text-white" />
+            <ColorfulSquare emojiUri="/Departments/FR.svg" bgColor="bg-best-ultra-light-blue" text="Fundraising" textColor="text-white" />
         </div>
     )
 }
