@@ -131,7 +131,15 @@ export default function Boardies() {
   return (
     <div className="flex items-center justify-center mt-8 lg:mt-40 w-full">
       {/* Desktop View */}
-      <div className="gap-4 flex-wrap w-full justify-center my-8 max-w-6xl hidden md:flex">
+      <div className="gap-4 flex-wrap w-full justify-center my-8 max-w-6xl hidden md:flex relative">
+      <Image
+        src="/stars.svg"
+        width={292}
+        height={102}
+        className="absolute -top-14 left-0  w-8 md:w-12 -z-10 rotate-45"
+        alt=" "
+      />
+    
         {boardiesData.map((p) => (
           <Boardie
             key={p.name}

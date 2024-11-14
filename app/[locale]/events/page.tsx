@@ -7,7 +7,7 @@ import Image from "next/image";
 import DepartmentsBoxes from "../components/DepartmentsAndIdentity/ColorSquersDepartments";
 import RectangleService from "../components/ServicesAndBoard/RectangleService";
 import { maruipol_bold, inter } from "../../fonts/fonts";
-
+import EventBg from "../../../public/EventBg.svg"
 type EventType = {
     _id: string;
     name: string;
@@ -99,7 +99,8 @@ export default function Page() {
                 alt=""
             />
 
-            <div className="min-h-screen flex items-center w-full justify-center flex-col p-6 lg:p-0">
+            <div className="min-h-screen flex items-center w-full justify-center flex-col p-6 lg:p-0 relative">
+                <Image src={EventBg} alt="" className="absolute hidden md:block top-0 left-0 w-full h-full object-contain -z-10"></Image>
                 <h1 className={`${maruipol_bold.className} text-3xl lg:text-5xl lg:font-bold font-bold lg:mb-6 mb-8 text-center relative`}>
                     <span className="text-black">Наші</span> <span className="text-best-blue">Івенти</span>
                     <Image

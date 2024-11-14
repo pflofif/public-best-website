@@ -165,7 +165,7 @@ const BecomeAPartner = () => {
         src="/stars.svg"
         width={292}
         height={102}
-        className="absolute bottom-2 md:bottom-24 right-2 md:right-24 w-12 w-8 -z-10"
+        className="absolute bottom-2 md:bottom-24 right-2 md:right-24 w-12 -z-10"
         alt=" "
       />
       <Image
