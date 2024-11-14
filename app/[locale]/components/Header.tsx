@@ -25,13 +25,7 @@ type MenuItem = {
 const menuItems: MenuItem[] = [
   { label: "Про нас", href: "/about-us", isDropdown: false },
   {
-    label: "Блог",
-    href: "#",
-    isDropdown: true,
-    dropdownItems: [
-      { label: "Latest News", href: "/blog/news" },
-      { label: "Events", href: "/blog/events" }
-    ],
+    label: "Блог",    href: "/blog",    isDropdown: false
   },
   { label: "Івенти", href: "/events", isDropdown: false },
   { label: "Твої можливості", href: "/opportunities", isDropdown: false },
@@ -72,21 +66,6 @@ const MenuItems = ({ setIsOpen }: { setIsOpen: (arg0: boolean) => void }) => {
                 ></path>
               </svg>
             </button>
-            {
-              //Dropdown Menu
-            }
-            <div className="min-lg:absolute left-0 py-2 w-40 min-lg:bg-blue-800 min-lg:rounded-md min-lg:shadow-lg hidden min-lg:group-hover:opacity-100 group-hover:block min-lg:group-hover:visible transition duration-200 ease-in-out">
-              {item.dropdownItems.map((dropdownItem, i) => (
-                <Link
-                  key={i}
-                  href={dropdownItem.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 max-lg:text-2xl text-sm hover:bg-blue-700"
-                >
-                  {dropdownItem.label}
-                </Link>
-              ))}
-            </div>
           </li>
         )
       )}
