@@ -34,19 +34,21 @@ export default function WeDevelopStudents() {
                         width={60}
                         className='absolute -top-4 right-0 transform scale-x-[-1] lg:scale-y-[-1] lg:top-[90px] lg:right-40 xl:top-[116px] xl:right-16 2xl:top-36 2xl:right-72'
                     />
-                    <h1 className='text-[44px] lg:text-6xl xl:text-[80px] 2xl:text-8xl xl:w-[700px] 2xl:w-[800px] font-bold text-white lg:mb-6 xl:mb-10 2xl:mb-14'>Ми Розвиваємо
-                        Студентів.</h1>
-                    <div className='flex flex-col lg:flex-row lg:gap-4 xl:gap-6 2xl:gap-8'> 
-                        <Link href='/apply-to-best'>
-                            <button className={`${inter.className} text-sm 2xl:text-lg flex items-center justify-center rounded-full bg-best-yellow text-best-blue w-[195px] xl:w-52 2xl:w-64 h-[46px] xl:h-14 2xl:h-16 mx-auto mt-4 lg:mx-0 hover:bg-best-blue hover:text-best-yellow hover:scale-110 transition-all duration-500 hover:shadow-[0_0_10px_5px_rgba(255,241,108,0.7)] border border-best-yellow`}>
-                                Приєднатись до нас
-                            </button>
-                        </Link>
-                        <Link href='/become-a-partner'>
-                            <button className={`${inter.className} text-sm 2xl:text-lg flex items-center justify-center rounded-full bg-best-blue text-best-yellow w-[174px] xl:w-52 2xl:w-64 h-[46px] xl:h-14  2xl:h-16 mx-auto mt-4 lg:mx-0 hover:bg-best-yellow hover:text-best-blue hover:scale-110 transition-all duration-500 hover:shadow-[0_0_10px_5px_rgba(255,241,108,0.7)] border border-best-yellow`}>
-                                Стати партнером
-                            </button>
-                        </Link>
+                    <div className='pt-40'>
+                        <h1 className='text-[44px] lg:text-6xl xl:text-[80px] 2xl:text-8xl xl:w-[700px] 2xl:w-[800px] font-bold text-white lg:mb-6 xl:mb-10 2xl:mb-14'>Ми Розвиваємо
+                            Студентів.</h1>
+                        <div className='flex flex-col lg:flex-row lg:gap-4 xl:gap-6 2xl:gap-8'>
+                            <Link href='/apply-to-best'>
+                                <button className={`${inter.className} text-sm 2xl:text-lg flex items-center justify-center rounded-full bg-best-yellow text-best-blue w-[195px] xl:w-52 2xl:w-64 h-[46px] xl:h-14 2xl:h-16 mx-auto mt-4 lg:mx-0 hover:bg-best-blue hover:text-best-yellow hover:scale-110 transition-all duration-500 hover:shadow-[0_0_10px_5px_rgba(255,241,108,0.7)] border border-best-yellow`}>
+                                    Приєднатись до нас
+                                </button>
+                            </Link>
+                            <Link href='/become-a-partner'>
+                                <button className={`${inter.className} text-sm 2xl:text-lg flex items-center justify-center rounded-full bg-best-blue text-best-yellow w-[174px] xl:w-52 2xl:w-64 h-[46px] xl:h-14  2xl:h-16 mx-auto mt-4 lg:mx-0 hover:bg-best-yellow hover:text-best-blue hover:scale-110 transition-all duration-500 hover:shadow-[0_0_10px_5px_rgba(255,241,108,0.7)] border border-best-yellow`}>
+                                    Стати партнером
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
