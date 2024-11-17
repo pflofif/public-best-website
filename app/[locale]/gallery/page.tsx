@@ -11,7 +11,7 @@ export default function Page() {
             try {
                 const response = await fetch("http://nksw44kswkc8sswkg8sgcck4.135.236.104.194.sslip.io/gallery/images");
                 if (!response.ok) throw new Error("Failed to fetch images");
-                
+
                 const data = await response.json();
                 setImages(data.images || []);
                 setLoading(false);
@@ -24,7 +24,14 @@ export default function Page() {
         fetchImages();
     }, []);
 
-    if (loading) return <p className="text-center text-gray-500">Loading images...</p>;
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
+            </div>
+        );
+    }
+
     if (error) return <p className="text-center text-red-500">Error: {error}</p>;
 
     return (

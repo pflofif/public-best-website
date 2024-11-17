@@ -25,7 +25,7 @@ export default function Page() {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch("https://best-lviv-website-api.fly.dev/events");
+                const response = await fetch("http://nksw44kswkc8sswkg8sgcck4.135.236.104.194.sslip.io/events");
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

@@ -15,7 +15,7 @@ export default function Page() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://best-lviv-website-api.fly.dev/registration')
+        fetch('http://nksw44kswkc8sswkg8sgcck4.135.236.104.194.sslip.io/registration')
             .then((response) => response.json())
             .then((data) => {
                 setRegistration(data);
