@@ -12,72 +12,29 @@ type EventType = {
     _id: string;
     name: string;
     description: string;
-    data: string;
+    imageUrl: string;
     sectionColor: string;
     isInProgress: boolean;
     link: string;
 };
+
+const API_URL = 'https://localhost:44355';
 
 export default function Page() {
     const [events, setEvents] = useState<EventType[]>([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                const response = await fetch("http://nksw44kswkc8sswkg8sgcck4.135.236.104.194.sslip.io/events");
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                if (!response.body) {
-                    throw new Error("ReadableStream not supported in this environment.");
-                }
-
-                const reader = response.body.getReader();
-                const decoder = new TextDecoder();
-                let receivedData = "";
-
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) {
-                        break; 
-                    }
-
-                    const chunk = decoder.decode(value, { stream: true });
-                    receivedData += chunk;
-
-                    let eventsArray = receivedData.split("\n");
-
-                    receivedData = eventsArray.pop() || "";
-
-                    for (let eventString of eventsArray) {
-                        try {
-                            const parsedEvent = JSON.parse(eventString);
-                            setEvents(prevEvents => [...prevEvents, parsedEvent]);
-                        } catch (e) {
-                            console.error("Error parsing event:", e);
-                        }
-                    }
-                }
-
-                if (receivedData.trim()) {
-                    try {
-                        const lastEvent = JSON.parse(receivedData);
-                        setEvents(prevEvents => [...prevEvents, lastEvent]);
-                    } catch (e) {
-                        console.error("Error parsing the last event:", e);
-                    }
-                }
-            } catch (err) {
-                console.error("Error fetching events:", err);
-            } finally {
+        fetch(`${API_URL}/api/events`)
+            .then((res) => res.json())
+            .then((data) => {
+                setEvents(data);
+                setLoading(false)
+            })
+            .catch((error) => {
+                console.error("Error fetching in-progress events:", error);
                 setLoading(false);
-            }
-        };
-
-        fetchEvents();
+            });
     }, []);
 
     if (loading) {
@@ -121,13 +78,13 @@ export default function Page() {
 
             <section className="max-w-[1440px] mx-auto">
                 {events.map((event, index) => (
-                     // @ts-ignore - Ignore type error for sectionColor
+                    // @ts-ignore - Ignore type error for sectionColor
                     <Event
                         key={event._id}
                         heading={event.name}
                         description={event.description}
                         sectionColor={event.sectionColor as any}
-                        Base64Image={event.data}
+                        imageUrl={event.imageUrl}
                         isInverted={index % 2 !== 0}
                         link={event.link}
                     />

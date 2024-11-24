@@ -10,7 +10,10 @@ const nextConfig = {
     output: "standalone",
     serverRuntimeConfig: {
         host: process.env.HOST || '0.0.0.0',
-    }
+    },
+    images: {
+        domains: ['minio-z8kgc0wwcccs4w0kkosk8040.135.236.104.194.sslip.io'], // Add your MinIO server's hostname here
+    },
 }
 
 const withNextIntl = require('next-intl/plugin')('./i18n.ts');
