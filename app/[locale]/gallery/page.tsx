@@ -1,6 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 
+const API_URL = 'https://localhost:44355';
+
 export default function Page() {
     const [images, setImages] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -9,11 +11,11 @@ export default function Page() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch("http://nksw44kswkc8sswkg8sgcck4.135.236.104.194.sslip.io/gallery/images");
+                const response = await fetch(`${API_URL}/api/gallery/get-all-images-urls`);
                 if (!response.ok) throw new Error("Failed to fetch images");
 
                 const data = await response.json();
-                setImages(data.images || []);
+                setImages(data || []);
                 setLoading(false);
             } catch (err) {
                 setError(err instanceof Error ? err.message : "Unknown error");
