@@ -6,19 +6,25 @@ import Image from "next/image";
 import LinkLearnMore from "../components/LinkLearnMore";
 
 type RegistrationType = {
+    id: string;
     isActive: boolean;
     urlToForm: string;
 };
+
+
+const API_URL = 'https://localhost:44355';
 
 export default function Page() {
     const [registration, setRegistration] = useState<RegistrationType | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://nksw44kswkc8sswkg8sgcck4.135.236.104.194.sslip.io/registration')
+        fetch(`${API_URL}/api/registration`)
             .then((response) => response.json())
             .then((data) => {
                 setRegistration(data);
+                console.log(registration)
+                console.log(data)
                 setLoading(false);
             })
             .catch((error) => {

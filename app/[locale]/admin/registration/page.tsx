@@ -1,5 +1,6 @@
 'use client';
 
+import { ApiError } from 'next/dist/server/api-utils';
 import { useState, useEffect } from 'react';
 
 type RegistrationType = {
@@ -7,6 +8,8 @@ type RegistrationType = {
     isActive: boolean;
     urlToForm: string;
 };
+
+const API_URL = 'https://localhost:44355';
 
 export default function RegistrationPage() {
     const [registration, setRegistration] = useState<RegistrationType | null>(null);
@@ -16,7 +19,7 @@ export default function RegistrationPage() {
     });
 
     useEffect(() => {
-        fetch('/api/registration')
+        fetch(`${API_URL}/api/registration`)
             .then((response) => response.json())
             .then((data) => {
                 setRegistration(data);
@@ -38,7 +41,7 @@ export default function RegistrationPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        fetch('/api/registration', {
+        fetch(`${API_URL}/api/registration`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
