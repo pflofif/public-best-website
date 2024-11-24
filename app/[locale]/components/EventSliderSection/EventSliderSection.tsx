@@ -4,6 +4,7 @@ import LinkLearnMore from '../LinkLearnMore';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { useState, useEffect } from 'react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -14,12 +15,18 @@ interface SwiperElementProps {
   description: string;
 }
 
+type EventData = {
+  name: string;
+  description: string;
+  imageUrl: string;
+};
+
 function SwiperElement({ imageUrl, title, description }: SwiperElementProps) {
   return (
     <div className='flex justify-center lg:block'>
-      <div className='flex flex-col px-8 w-[300px] md:w-[404px] 2xl:w-[484px] py-7 bg-[#0400C5] rounded-3xl'>
+      <div className='flex flex-col px-8 w-[300px] md:w-[404px] 2xl:w-[484px] py-8 bg-[#0400C5] rounded-3xl lg:h-[500px]'>
         <div className='mb-4 rounded-2xl overflow-hidden'>
-          <Image
+          <img
             src={imageUrl}
             alt={title}
             width={564}
@@ -34,7 +41,18 @@ function SwiperElement({ imageUrl, title, description }: SwiperElementProps) {
   );
 }
 
+const API_URL = 'https://localhost:44355';
+
 export default function EventSliderSection() {
+  const [events, setEvents] = useState<EventData[]>([]);
+
+  useEffect(() => {
+    fetch(`${API_URL}/api/events/what-we-do`)
+      .then((response) => response.json())
+      .then((data) => setEvents(data))
+      .catch((error) => console.error('Error fetching events:', error));
+  }, []);
+
   return (
     <section className='bg-best-blue text-white relative pt-10 lg:py-32 min-h-0 lg:overflow-clip'>
       <div className='absolute top-0 left-0 w-full h-full z-0'>
@@ -43,8 +61,8 @@ export default function EventSliderSection() {
       <div className='lg:flex items-center gap-10 md:gap-24 relative z-1 max-w-[1920px] mx-auto lg:px-[11%]'>
         <div className='basis-[300px] xl:basis-[650px] lg:-mt-32 flex-shrink-0 text-center lg:text-left p-2'>
           <h2 className='text-4xl sm:text-6xl font-bold mb-12'>
-            Чим ми
-            <span className='lg:hidden block'><br /></span>
+            Чим ми{' '}
+            <span className='lg:hidden block h-0  '><br /></span>
             займаємось?
           </h2>
           <div className="flex flex-col items-center md:items-start">
@@ -91,36 +109,17 @@ export default function EventSliderSection() {
             navigation
             pagination={{ clickable: true }}
             modules={[Pagination, Navigation]}
-            className='mt-20 lg:mt-0 lg:absolute top-0 left-0 h-[640px] min-w-0 lg:max-w-[800px]'>
-            <SwiperSlide>
-              <SwiperElement
-                title='BEST::HACKath0n'
-                description="HACKath0n (від hack та marathon) — це інтенсивний захід, під час якого учасники працюють разом над розв'язанням певної створенням нового програмного продукту, сервісу чи додатку."
-                imageUrl='/eventImages/hack.jpg'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SwiperElement
-                title='BEC'
-                description="Наймасштабніші командні інженерні змагання Львову. Команди, які беруть участь в BEC змагаються у двох категоріях."
-                imageUrl='/eventImages/bec.png'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SwiperElement
-                title='ІЯК'
-                description="ІЯК (Інженерний Ярмарок Кар’єри) —  це виставка провідних компаній для амбітних студентів та молодих спеціалістів, які бажають зробити перший крок до своєї кар’єри."
-                imageUrl='/eventImages/ejf.png'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SwiperElement
-                title='BEST Training Week'
-                description="BTW (BEST Training Week) — це тиждень безкоштовних насичених тренінгів, шерінгів, лекцій, воркшопів і т.п. для студентів різноманітних спеціальностей"
-                imageUrl='/eventImages/btw.jpg'
-              />
-            </SwiperSlide>
-            {/* Add more SwiperSlides if needed */}
+            className='mt-20 lg:mt-0 lg:absolute top-0 left-0 h-[660px] min-w-0 lg:max-w-[800px]'>
+            {events.map((ev, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <SwiperElement
+                    title={ev.name}
+                    description={ev.description}
+                    imageUrl={ev.imageUrl}
+                  />
+                </SwiperSlide>)
+            })}
           </Swiper>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 const API_URL = 'https://localhost:44355';
 
 type EventType = {
-    _id: string;
+    id: string;
     name: string;
     description: string;
     imageUrl: string; // Presigned URL from MinIO
@@ -105,7 +105,7 @@ export default function EventsPage() {
 
                 // Update the event in the local state
                 const updatedEvent = await response.json();
-                setEvents(events.map((event) => (event._id === editId ? updatedEvent : event)));
+                setEvents(events.map((event) => (event.id === editId ? updatedEvent : event)));
             } else {
                 // Use POST for creating a new event
                 const response = await fetch(`${API_URL}/api/events`, {
@@ -152,7 +152,7 @@ export default function EventsPage() {
 
             if (!response.ok) throw new Error('Error deleting event');
 
-            setEvents(events.filter((event) => event._id !== id));
+            setEvents(events.filter((event) => event.id !== id));
         } catch (error) {
             console.error(error);
         }

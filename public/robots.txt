@@ -1,11 +1,6 @@
 # *
 User-agent: *
-Disallow: /edit-events
-Disallow: /registration
 Allow: /
-
-
-
 
 # Host
 Host: https://best-lviv.org.ua
