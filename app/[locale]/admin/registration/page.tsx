@@ -9,7 +9,7 @@ type RegistrationType = {
     urlToForm: string;
 };
 
-const API_URL = 'https://localhost:44355';
+const API_URL = 'https://best-lviv-web-api.azurewebsites.net/';
 
 export default function RegistrationPage() {
     const [registration, setRegistration] = useState<RegistrationType | null>(null);
