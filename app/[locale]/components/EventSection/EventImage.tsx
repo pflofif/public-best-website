@@ -19,7 +19,7 @@ const EventImage = ({ imageUrl: imageUrl, borderColor: borderColor, isInverted: 
 
     return (
         <div style={{ backgroundColor: btnColorClass }} className={`sm:px-[30px] sm:py-[33px] px-[19px] py-[19px] inline-block rounded-[20px] sm:rounded-[50px]  ${isInverted ? 'min-lg:order-2' : ''}`}>
-            <Image src={imageUrl} alt={"event Image"} width={652} height={378} className="rounded-[15px] sm:rounded-[24px]"></Image>
+            <img src={imageUrl} alt={"event Image"} width={652} height={378} className="rounded-[15px] sm:rounded-[24px]"></img>
         </div>
     )
 }

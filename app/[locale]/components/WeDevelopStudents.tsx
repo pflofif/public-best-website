@@ -34,7 +34,7 @@ export default function WeDevelopStudents() {
                         width={60}
                         className='absolute -top-4 right-0 transform scale-x-[-1] lg:scale-y-[-1] lg:top-[90px] lg:right-40 xl:top-[116px] xl:right-16 2xl:top-36 2xl:right-72'
                     />
-                    <div className='pt-40'>
+                    <div>
                         <h1 className='text-[44px] lg:text-6xl xl:text-[80px] 2xl:text-8xl xl:w-[700px] 2xl:w-[800px] font-bold text-white lg:mb-6 xl:mb-10 2xl:mb-14'>Ми Розвиваємо
                             Студентів.</h1>
                         <div className='flex flex-col lg:flex-row lg:gap-4 xl:gap-6 2xl:gap-8'>

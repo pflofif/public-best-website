@@ -9,18 +9,20 @@ type EventType = {
   _id: string;
   name: string;
   description: string;
-  data: string;
+  imageUrl: string;
   sectionColor: string;
   isInProgress: boolean;
   link: string;
 };
+
+const API_URL = 'https://best-lviv-web-api.azurewebsites.net/';
 
 export default function Page() {
   const [events, setEvents] = useState<EventType[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://nksw44kswkc8sswkg8sgcck4.135.236.104.194.sslip.io/events/in-progress", {
+    fetch(`${API_URL}/api/events/in-progress`, {
       cache: "no-store",
     })
       .then((response) => response.json())
@@ -99,7 +101,7 @@ export default function Page() {
               heading={event.name}
               description={event.description}
               sectionColor={event.sectionColor}
-              Base64Image={event.data}
+              imageUrl={event.imageUrl}
               isInverted={index % 2 !== 0}
               link={event.link}
             />
