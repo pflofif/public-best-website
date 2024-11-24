@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 
+// Define the API URL for testing
+const API_URL = 'https://localhost:44355';
+
 type EventType = {
     _id: string;
     name: string;
     description: string;
-    data: string; // Base64 encoded image
+    imageUrl: string; // Presigned URL from MinIO
     isInProgress: boolean;
     sectionColor: string;
     link: string;
@@ -17,17 +20,18 @@ export default function EventsPage() {
     const [formData, setFormData] = useState({
         name: '',
         description: '',
-        data: '', // Image as Base64
+        imageUrl: '',
         isInProgress: false,
         sectionColor: '',
         link: ''
     });
     const [imagePreview, setImagePreview] = useState<string | null>(null);
+    const [imageFile, setImageFile] = useState<File | null>(null);
     const [isEditing, setIsEditing] = useState<boolean>(false);
     const [editId, setEditId] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch('/api/events')
+        fetch(`${API_URL}/api/events`)
             .then((response) => response.json())
             .then((data) => setEvents(data))
             .catch((error) => console.error('Error fetching events:', error));
@@ -35,14 +39,15 @@ export default function EventsPage() {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked, files } = e.target;
-        if (name === 'data' && files && files[0]) {
+        if (name === 'imageFile' && files && files[0]) {
+            const file = files[0];
+            setImageFile(file);
             const reader = new FileReader();
             reader.onloadend = () => {
-                const base64String = reader.result as string;
-                setFormData({ ...formData, data: base64String });
-                setImagePreview(base64String);
+                const previewUrl = reader.result as string;
+                setImagePreview(previewUrl);
             };
-            reader.readAsDataURL(files[0]);
+            reader.readAsDataURL(file);
         } else {
             setFormData({
                 ...formData,
@@ -51,36 +56,75 @@ export default function EventsPage() {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (isEditing && editId) {
-            fetch(`/api/events/${editId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((updatedEvent) => {
-                    setEvents(events.map((event) => (event._id === editId ? updatedEvent : event)));
-                    resetForm();
-                })
-                .catch((error) => console.error('Error updating event:', error));
-        } else {
-            fetch('/api/events', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((newEvent) => {
-                    setEvents([...events, newEvent]);
-                    resetForm();
-                })
-                .catch((error) => console.error('Error adding event:', error));
+
+        try {
+            let imageUrl = formData.imageUrl;
+
+            // Upload image to MinIO if a new file is selected
+            if (imageFile) {
+                const uploadFormData = new FormData();
+                uploadFormData.append('file', imageFile);
+
+                const uploadResponse = await fetch(`${API_URL}/api/events/upload`, {
+                    method: 'POST',
+                    body: uploadFormData,
+                });
+
+                if (!uploadResponse.ok) throw new Error('Error uploading image');
+
+                const uploadData = await uploadResponse.json();
+                imageUrl = uploadData.url; // Use the returned URL
+            }
+
+            // Prepare the payload (DTO structure)
+            const eventPayload = {
+                name: formData.name,
+                description: formData.description,
+                imageUrl, // Use the uploaded image URL
+                isInProgress: formData.isInProgress,
+                sectionColor: formData.sectionColor,
+                link: formData.link,
+            };
+
+            console.log(isEditing)
+            console.log(editId)
+            if (isEditing && editId) {
+                console.log("Hre")
+                // Use PUT for editing an existing event
+                const response = await fetch(`${API_URL}/api/events/${editId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(eventPayload),
+                });
+
+                if (!response.ok) throw new Error('Error updating event');
+
+                // Update the event in the local state
+                const updatedEvent = await response.json();
+                setEvents(events.map((event) => (event._id === editId ? updatedEvent : event)));
+            } else {
+                // Use POST for creating a new event
+                const response = await fetch(`${API_URL}/api/events`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(eventPayload),
+                });
+
+                if (!response.ok) throw new Error('Error adding event');
+
+                const newEvent = await response.json();
+                setEvents([...events, newEvent]);
+            }
+
+            resetForm();
+        } catch (error) {
+            console.error(error);
         }
     };
 
@@ -88,31 +132,36 @@ export default function EventsPage() {
         setFormData({
             name: event.name,
             description: event.description,
-            data: event.data,
+            imageUrl: event.imageUrl,
             isInProgress: event.isInProgress,
             sectionColor: event.sectionColor,
             link: event.link
         });
-        setImagePreview(event.data);
+        console.log(event)
+        setImagePreview(event.imageUrl);
+        setImageFile(null); // Reset file input
         setIsEditing(true);
-        setEditId(event._id);
+        setEditId(event.id!);
     };
 
-    const handleDelete = (id: string) => {
-        fetch(`/api/events/${id}`, {
-            method: 'DELETE',
-        })
-            .then((response) => {
-                if (response.ok) {
-                    setEvents(events.filter((event) => event._id !== id));
-                }
-            })
-            .catch((error) => console.error('Error deleting event:', error));
+    const handleDelete = async (id: string) => {
+        try {
+            const response = await fetch(`${API_URL}/api/events/${id}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) throw new Error('Error deleting event');
+
+            setEvents(events.filter((event) => event._id !== id));
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     const resetForm = () => {
-        setFormData({ name: '', description: '', data: '', isInProgress: false, sectionColor: '', link: '' });
+        setFormData({ name: '', description: '', imageUrl: '', isInProgress: false, sectionColor: '', link: '' });
         setImagePreview(null);
+        setImageFile(null);
         setIsEditing(false);
         setEditId(null);
     };
@@ -163,7 +212,7 @@ export default function EventsPage() {
                         <input
                             type="text"
                             name="link"
-                            placeholder="Link to websitr"
+                            placeholder="Link to website"
                             value={formData.link}
                             onChange={handleInputChange}
                             required
@@ -174,7 +223,7 @@ export default function EventsPage() {
                         <label className="block text-sm font-medium text-gray-700">Image</label>
                         <input
                             type="file"
-                            name="data"
+                            name="imageFile"
                             accept="image/*"
                             onChange={handleInputChange}
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -217,12 +266,12 @@ export default function EventsPage() {
                 <ul className="space-y-4">
                     {events.map((event) => (
                         <li
-                            key={event._id}
+                            key={event.id}
                             className="p-4 bg-gray-50 rounded-lg shadow flex flex-col sm:flex-row justify-between items-center"
                         >
                             <div className="flex items-center space-x-4">
                                 <img
-                                    src={event.data}
+                                    src={event.imageUrl}
                                     alt={event.name}
                                     className="w-20 h-20 object-cover rounded-md shadow-md"
                                 />
@@ -239,7 +288,7 @@ export default function EventsPage() {
                                     Edit
                                 </button>
                                 <button
-                                    onClick={() => handleDelete(event._id)}
+                                    onClick={() => handleDelete(event.id)}
                                     className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                                 >
                                     Delete
