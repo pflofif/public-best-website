@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 // Define the API URL for testing
-const API_URL = 'https://best-lviv-web-api.azurewebsites.net/';
+const API_URL = 'https://best-lviv-web-api.azurewebsites.net';
 
 type EventType = {
     id: string;

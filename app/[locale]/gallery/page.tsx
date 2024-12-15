@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { maruipol_bold } from '../../fonts/fonts';
 import Image from 'next/image';
 
-const API_URL = 'https://best-lviv-web-api.azurewebsites.net/';
+const API_URL = 'https://best-lviv-web-api.azurewebsites.net';
 
 export default function Page() {
     const [images, setImages] = useState<string[]>([]);

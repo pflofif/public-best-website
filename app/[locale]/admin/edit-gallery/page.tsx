@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 
-const API_URL = 'https://best-lviv-web-api.azurewebsites.net/';
+const API_URL = 'https://best-lviv-web-api.azurewebsites.net';
 
 type AdminImage = {
     id: string;
