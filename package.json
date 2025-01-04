@@ -11,6 +11,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@craftjs/core": "^0.2.11",
     "@emailjs/browser": "^4.4.1",
     "@next/font": "^14.2.5",
     "@types/mongoose": "^5.11.97",
