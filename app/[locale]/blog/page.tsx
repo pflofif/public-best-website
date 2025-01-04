@@ -14,7 +14,7 @@ interface ArticleData {
     lastUpdated: string;
 }
 
-const API_URL = 'http://localhost:5175';
+const API_URL = 'https://best-lviv-web-api.azurewebsites.net';
 
 export default function Page() {
     const [error, setError] = useState<string | null>(null);

@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
 
-const API_URL = 'http://localhost:5175';
+const API_URL = 'https://best-lviv-web-api.azurewebsites.net';
 
 export default function ArticlePage() {
     const { id } = useParams();
@@ -68,16 +68,20 @@ export default function ArticlePage() {
             {articleContent && (
                 <iframe
                     ref={iframeRef}
-                    className="w-full max-w-4xl border-none overflow-hidden"
+                    className={`w-full max-w-4xl border-none overflow-hidden`}
                     sandbox="allow-scripts allow-same-origin"
                     srcDoc={`
                         <html>
                             <head>
+                                <meta charset="UTF-8">
+                                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+                                
                                 <style>
                                     html, body {
                                         margin: 0;
                                         padding: 0;
                                         overflow: hidden;
+                                        font-family: 'Inter', sans-serif;
                                     }
                                 </style>
                             </head>
