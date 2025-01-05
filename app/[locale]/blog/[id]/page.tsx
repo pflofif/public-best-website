@@ -68,7 +68,7 @@ export default function ArticlePage() {
             {articleContent && (
                 <iframe
                     ref={iframeRef}
-                    className={`w-full max-w-4xl mx-48 border-none overflow-hidden`}
+                    className={`w-full max-w-4xl mx-10 border-none overflow-hidden`}
                     sandbox="allow-scripts allow-same-origin"
                     srcDoc={`
                         <html>
