@@ -12,7 +12,7 @@ interface ArticleData {
     lastUpdated: string;
 }
 
-const API_URL = 'https://best-lviv-web-api.azurewebsites.net';
+const API_URL = 'http://localhost:5175';
 
 export default function Page() {
     const [error, setError] = useState<string | null>(null);
@@ -55,6 +55,8 @@ export default function Page() {
     const handleArticlesSync = async () => {
         setError(null);
         try {
+            setLoading(true);
+
             const response = await fetch(`${API_URL}/api/blog/sync-articles`, {
                 method: 'POST',
             });
@@ -64,6 +66,7 @@ export default function Page() {
             }
 
             alert("Статті успішно оновлено! Перезавантаж сторінку щоб побачити оновлення.");
+            setLoading(false);
         } catch (err: any) {
             setError(err.message || 'An unexpected error occurred');
             console.error("Error syncing Notion data:", err);
