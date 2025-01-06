@@ -25,7 +25,7 @@ const EventDescription = ({ descColor: descColor, headingText: headingText, desc
                 <EventLine lineColor={descColor}></EventLine>
             </div>
             <h4 className="text-xl font-bold sm:mb-5 mb-2 sm:text-5xl max-lg:text-center">{headingText}</h4>
-            <p className="paragraphMobile md:text-paragraphDesktop min-lg:mb-16 mb-8 max-w-[459px] max-lg:text-center">{descriptionText}</p>
+            <p className="text-paragraphMobile md:text-paragraphDesktop min-lg:mb-16 mb-8 max-w-[459px] max-lg:text-center">{descriptionText}</p>
 
             <LinkLearnMore text={"Дізнатися більше"} href={link} btnColor={descColor}
                 textColor={textColor}></LinkLearnMore>

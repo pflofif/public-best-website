@@ -32,12 +32,12 @@ export default function WhatIsBest() {
           className="absolute  lg:right-[-120px] lg:top-[-120px] transform scale-[0.25]  w-36 lg:w-52 -z-10"
           alt=" "
         />
-        <div className="bg-[#FFA5DB] relative flex justify-center  order-2 xl:order-1 items-center xl:shrink-0 basis-[700px] p-[0.9rem] sm:px-[2.5rem] sm:py-[3.313rem]  sm:rounded-[50px] rounded-[20px]">
+        <div className="bg-[#FFA5DB] relative flex justify-center order-2 xl:order-1 items-center xl:shrink-0 basis-[680px] px-[1.1rem] py-[1.1rem] md:px-[2rem] md:py-[2rem] md:rounded-[30px] rounded-[20px]">
           <Image
-            className=" h-full w-full md:w-[613px] md:h-[338px] object-cover  sm:rounded-[24px] rounded-[12px]"
+            className="h-full w-full md:w-[648px] md:h-[338px] object-cover md:rounded-[20px] rounded-[12px]"
             src="/WhatIsBest.jpg"
             alt={"event Image"}
-            width={613}
+            width={648}
             height={338}
           ></Image>
 
@@ -45,12 +45,12 @@ export default function WhatIsBest() {
             src="/whatbec-rightLinesMob.svg"
             width={142}
             height={52}
-            className="absolute lg:hidden  right-[-80px] bottom-[-70px] transform scale-[0.35]  w-36 lg:w-52 -z-10"
+            className="absolute lg:hidden right-[-80px] bottom-[-70px] transform scale-[0.35]  w-36 lg:w-52 -z-10"
             alt=" "
           />
         </div>
         <div
-          className={`${inter.className} relative order-1 xl:order-2 basis-[700px]  bg-best-yellow  p-[0.9rem] sm:px-[2.5rem] sm:py-[3.313rem] paragraphMobile md:text-paragraphDesktop sm:rounded-[50px] rounded-[20px]`}
+          className={`${inter.className} relative order-1 xl:order-2 basis-[700px]  bg-best-yellow  p-[0.9rem] sm:px-[2rem] sm:py-[2rem] text-paragraphMobile md:text-paragraphDesktop sm:rounded-[30px] rounded-[20px]`}
         >
           <Image
             src="/whatbec-leftLinesMob.svg"
