@@ -6,7 +6,7 @@ export default function WhatIsBest() {
       <h2
         className={`${maruipol_bold.className} text-nowrap text-hack-green text-4xl lg:text-5xl mb-[3.5rem] lg:mb-[5.125rem] text-center relative`}
       >
-        Що таке
+        Що Таке
         <span className="text-best-blue"> BEST</span>
         <Image
           src="/partners_line.svg"
@@ -34,7 +34,7 @@ export default function WhatIsBest() {
         />
         <div className="bg-[#FFA5DB] relative flex justify-center  order-2 xl:order-1 items-center xl:shrink-0 basis-[700px] p-[0.9rem] sm:px-[2.5rem] sm:py-[3.313rem]  sm:rounded-[50px] rounded-[20px]">
           <Image
-            className=" h-full w-full object-cover  sm:rounded-[24px] rounded-[12px]"
+            className=" h-full w-full md:w-[613px] md:h-[338px] object-cover  sm:rounded-[24px] rounded-[12px]"
             src="/WhatIsBest.jpg"
             alt={"event Image"}
             width={613}
@@ -59,8 +59,8 @@ export default function WhatIsBest() {
             className="absolute lg:hidden left-[-80px] top-[-70px] transform scale-[0.35]  w-36 lg:w-52 -z-10"
             alt=" "
           />
-          <p className="text-paragraphDesktop mb-8 lg:mb-12">
-            BEST (Board of European Students of Technology) – міжнародна
+          <p className="text-paragraphMobile md:text-paragraphDesktop mb-8 lg:mb-12">
+            BEST (Board of European Students of Technology) – міжнародна
             неприбуткова, неполітична, молодіжна громадська організація, яка
             була створена 1989 року в Берліні.
           </p>
@@ -70,11 +70,11 @@ export default function WhatIsBest() {
             Осередок BEST Lviv
           </h3>
           <div>
-            <p className="paragraphMobile md:text-paragraphDesktop">
+            <p className="text-paragraphMobile md:text-paragraphDesktop">
               Осередок BEST Lviv було створено у 2002 році при Національному
               університеті “Львівська політехніка”.
             </p>
-            <p className="paragraphMobile md:text-paragraphDesktop">
+            <p className="text-paragraphMobile md:text-paragraphDesktop">
               Наша діяльність полягає у налагодженні зв'язків між Студентами,
               Компаніями та Університетом. Львівський осередок є одним з трьох
               LBG в Україні (Київ, Львів, Вінниця)
