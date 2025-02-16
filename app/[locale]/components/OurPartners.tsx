@@ -34,7 +34,7 @@ const partnersData = [
     imgSrc: "lmr.svg",
     alt: "lmr",
   },
- 
+
 ];
 
 const Partner = ({
@@ -64,11 +64,11 @@ export default function OurPartners() {
       >
         <span>Наші</span> <span className="text-best-blue">Партнери</span>
         <Image
-            src="/partners_line.svg"
-            width={292}
-            height={102}
-            className="absolute -bottom-6 lg:-bottom-10 right-0 w-36 lg:w-52 -z-10"
-            alt=" "
+          src="/partners_line.svg"
+          width={292}
+          height={102}
+          className="absolute -bottom-6 lg:-bottom-10 right-0 w-36 lg:w-52 -z-10"
+          alt=" "
         />
       </h2>
       <p
@@ -79,7 +79,7 @@ export default function OurPartners() {
 
       <div className="md:gap-24 gap-12 flex flex-wrap w-full justify-center my-8">
         {partnersData.map((p, index) => (
-          <Partner imgSrc={p.imgSrc} alt={p.alt} />
+          <Partner key={index} imgSrc={p.imgSrc} alt={p.alt} />
         ))}
       </div>
       <Image
@@ -88,15 +88,15 @@ export default function OurPartners() {
         height={102}
         className="absolute bottom-2 md:bottom-24 right-2 md:right-24 w-12 w-8 -z-10"
         alt=" "
-    />
-    <Image
+      />
+      <Image
         src="/stars.svg"
         width={292}
         height={102}
         className="absolute top-48 left-24 md:left-72 w-8 md:w-12 -z-10 rotate-45"
         alt=" "
-    />
-    
+      />
+
 
     </section>
   );

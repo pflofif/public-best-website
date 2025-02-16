@@ -2,7 +2,7 @@ import { inter, maruipol_bold } from "../../fonts/fonts";
 import Image from "next/image";
 export default function WhatIsBest() {
   return (
-    <section className="items-center justify-center max-w-[1444px] px-[3.188rem]  mx-auto gap-8 lg:pt-[18.75rem] lg:pb-[10.625rem] pt-[5.125rem] pb-[8.25rem]">
+    <section className="items-center justify-center max-w-[1444px] px-[3.188rem]  mx-auto gap-8 lg:pt-[10rem] lg:pb-[10.625rem] pt-[5.125rem] pb-[8.25rem]">
       <h2
         className={`${maruipol_bold.className} text-nowrap text-hack-green text-4xl lg:text-5xl mb-[3.5rem] lg:mb-[5.125rem] text-center relative`}
       >

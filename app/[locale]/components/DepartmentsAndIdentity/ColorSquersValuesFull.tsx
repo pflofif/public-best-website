@@ -1,11 +1,8 @@
 import ValuesBoxes from "./ColorSquersValuesPages";
-import Clr_Sqrs_pg from "./ColorSquersValuesPages";
 import Image from "next/image";
 
 export default function ValuesPage() {
   return (
-
-
     <div className="min-h-screen flex items-center w-full justify-center flex-col">
       <h1 className=" text-3xl lg:text-5xl lg:font-bold font-bold lg:mb-6 mb-8 text-center relative">
         <span className="text-black">Наші</span> <span className="text-best-blue">Цінності</span>
